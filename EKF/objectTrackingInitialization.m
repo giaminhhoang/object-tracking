@@ -24,7 +24,7 @@ data_algo.EKF.InnovationAzimuthStd = 0;
 
 % main outputs
 data_algo.outputs.position = zeros(2,1);
-data_algo.outputs.velocity = zerod(2,1);
+data_algo.outputs.velocity = zeros(2,1);
 data_algo.outputs.positionStd = zeros(2,1);
 data_algo.outputs.velocityStd = zeros(2,1);
 

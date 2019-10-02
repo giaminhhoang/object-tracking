@@ -10,7 +10,7 @@
 %                       - Signals : struct containing simulated signals
 %                       
 %           Outputs : 
-%                       - Results_FUSION : results of the INS/GNSS/STL processing
+%                       - Results_FUSION : results of the 
 %                   
 %
 % *************************************************************
@@ -19,17 +19,17 @@
 function [Results] = objectTrackingEngine(signals, paramsSimulation, dataAlgo, paramsAlgo)
 
 
-Npts = length(signals.x);
+npts = length(signals.x);
 
 %% ************************************************************************
 % Main loop
 
-for i = 1:Npts
+for i = 1:npts
     
     % copy measurements in algorithm's data structure
     dataAlgo.t = signals.t;
-    dataAlgo.sonarRange = signals.sonarRange;
-    dataAlgo.sonarAzimuth = signals.sonarAzimuth;
+    dataAlgo.sonar.range = signals.sonar.range;
+    dataAlgo.sonar.azimuth = signals.sonar.azimuth;
     
     if i > 1
         dataAlgo.Ts = paramsAlgo.Ts;
