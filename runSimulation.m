@@ -27,6 +27,7 @@ function Stats = ZEN_runSimulation()
 
 %% *************************************************************
 % parameters
+useLoadedTrajectory = 1;
 
 %% **************************************
 %
@@ -36,13 +37,19 @@ function Stats = ZEN_runSimulation()
 
 if useLoadedTrajectory
 
-    [t,x,y] = ZEN_readReference();
-    npts = length(t);
+    [valuesRef] = ZEN_readReference();
+
+    npts = length(valuesRef);
 
     params.dt = 0.1;
     params.t0 = 0;
+    t = params.t0:params.dt:(npts-1)*params.dt;
+
     params.Tmax = t(end) - t(1);
     params.useRandomTrajectory = 0;         % trajectory is loaded from file or simulated
+
+    params.loadedTrajectory.t = t;
+    params.loadedTrajectory.position = valuesRef;
 
 end
 
@@ -83,6 +90,7 @@ disp('Simulation...')
 %               Display            
 %
 % ***************************************
+
 
 
 
