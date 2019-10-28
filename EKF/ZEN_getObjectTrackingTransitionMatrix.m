@@ -1,3 +1,23 @@
+%% ****************************************************************
+%
+%           Description : return TransitionMatrix
+%                   frame = Cartesian
+%                   state = 4 parameters
+%           
+%
+%           Author : G.M. Hoang
+%
+%           Rev. 0 : baseline
+%
+%           Inputs : 
+%                       - Ts : [1x1] sampling period
+%                       
+%           Outputs : 
+%                       - Phi : [4x4] transition matrix
+%             
+%
+% *************************************************************
+
 function Phi = getObjectTrackingTransitionMatrix(Ts)
 
 Phi = eye(4);

@@ -1,3 +1,25 @@
+%% ****************************************************************
+%
+%           Description : return SystemNoiseCovMatrix 
+%                   frame = Cartesian
+%                   state = 4 parameters
+%           
+%
+%           Author : G.M. Hoang
+%
+%           Rev. 0 : baseline
+%
+%           Inputs : 
+%                       - q : [1x1] spectral density of process noise in m^2/s^3
+%                       - Ts : [1x1] sampling period in s
+%                       
+%           Outputs : 
+%                       - Q : [4x4] system noise covariance matrix
+%             
+%
+% *************************************************************
+
+
 function Q = getObjectTrackingSystemNoiseCov(q, Ts)
 
 Q = eye(4);
