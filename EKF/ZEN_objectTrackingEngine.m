@@ -16,15 +16,15 @@
 % *************************************************************
 
 
-function [Results] = objectTrackingEngine(signals, paramsSimulation, dataAlgo, paramsAlgo)
+function [Results] = ZEN_objectTrackingEngine(signals, paramsSimulation, dataAlgo, paramsAlgo)
 
 
-npts = length(signals.x);
+Npts = length(signals.x);
 
 %% ************************************************************************
 % Main loop
 
-for i = 1:npts
+for i = 1:Npts
     
     % copy measurements in algorithm's data structure
     dataAlgo.t = signals.t;

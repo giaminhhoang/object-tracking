@@ -1,0 +1,35 @@
+%% ****************************************************************
+%
+%           Description : generate sonar signals
+%
+%           Author : G.M. Hoang
+%
+%           Rev. 0 : baseline
+%
+%           Inputs : 
+%                       - signals : struct containing simulation signals
+%                       - profile : struct containging sensors parameters
+%           Outputs : 
+%                       - signals : updated struct with sensors signals
+%
+% *************************************************************
+
+function signals = ZEN_generateSonar(signals, profile, simParams)
+
+Npts = length(signals.t);
+dt = (signals.t(Npts)-signals.t(1))/(Npts-1);
+
+%% build the reference (perfect signal)
+signals.range = sqrt(signals.x.^2 + signals.y.^2);
+signals.azimuth = atan2(signals.y, signals.x);
+
+%% ************************************************************************
+% new measurement flag
+% compute update measurement flags
+Inew = round([1:]);
+
+    % generate random measuements
+    for i = 1:numMonteCarlo
+        signals.sonar_range(i,:) = signals.range + params.sonarRangeStd * randn(1,npts);
+        signals.sonar_azimuth(i,:) = signals.azimuth + params.sonarAzimuthStd * randn(1,npts);
+    end

@@ -1,0 +1,35 @@
+%% ****************************************************************
+%
+%           Description : initialize Signals used for simulation
+%                           
+%
+%           Author : G.M. Hoang
+%
+%           Rev. 0 : baseline
+%
+%           Inputs : 
+%                       - simParams : struct containing simulation parameters
+%                       
+%           Outputs : 
+%                       - signals : Struct containing all simulation signals
+%
+% *************************************************************************
+
+function [signals] = ZEN_initializeSignals(simParams)
+
+
+
+%% ************************************************************************
+%
+%                           Dynamic signals
+%
+% *************************************************************************
+
+t = [0:simParams.Ts:(simParams.Npts-1)*simParams.Ts] + simParams.t0;
+
+signals.t = t;
+signals.position = 
+
+
+
+

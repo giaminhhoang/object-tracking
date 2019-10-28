@@ -14,9 +14,9 @@
 %
 % *************************************************************
 
-function [profile] = ZEN_getProfile(profileIn)
+function [profile] = ZEN_getProfile(profileName)
 
-switch profileIn
+switch profileName
 
     case 'debug'
 
@@ -30,7 +30,7 @@ switch profileIn
 
     otherwise
 
-        [extractedProfile] = strsplit(profileIn, '+');
+        [extractedProfile] = strsplit(profileName, '+');
         
         if length(extractedProfile) == 2
             [motion] = ZEN_getMotionModel(extractedProfile{1});

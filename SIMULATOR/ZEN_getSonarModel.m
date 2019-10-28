@@ -23,12 +23,12 @@ deg2rad = pi/180;
 switch sonarProfileName
 
     case 'prefect'
-        sonar.dt = 0.1;                         % sonar sampling period in s
+        sonar.Ts = 0.1;                         % sonar sampling period in s
         sonar.rangeStd = 0;                     % sonar range uncertainty in m
         sonar.azimuthStd = 0;                   % sonar azimuth uncertainty in rad
 
     case 'standard'
-        sonar.dt = 0.1;                         % sonar sampling period in s
+        sonar.Ts = 0.1;                         % sonar sampling period in s
         sonar.rangeStd = 0.1;                   % sonar range uncertainty in m
         sonar.azimuthStd = 3*deg2rad;           % sonar azimuth uncertainty in rad
 
