@@ -15,8 +15,11 @@
 %
 % *************************************************************************
 
-function [signals] = ZEN_initializeSignals(simParams)
+function [signals] = ZEN_initializeSignals(paramsSim)
 
+t = [0:paramsSim.Ts:(paramsSim.Npts-1)*paramsSim.Ts] + paramsSim.t0;
+Npts = paramsSim.Npts;
+numMonteCarlo = paramsSim.numMonteCarloSim;
 
 
 %% ************************************************************************
@@ -25,9 +28,7 @@ function [signals] = ZEN_initializeSignals(simParams)
 %
 % *************************************************************************
 
-t = [0:simParams.Ts:(simParams.Npts-1)*simParams.Ts] + simParams.t0;
-Npts = simParams.Npts;
-numMonteCarlo = simParams.numMonteCarloSim;
+
 
 signals.t = t;
 signals.position = zeros(2,Npts);

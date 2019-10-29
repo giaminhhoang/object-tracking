@@ -50,11 +50,68 @@ display.lineWidthStd = 1;               % line width of std values
 display.markerStyleStd = 'none';        % marker style of std values
 display.markerSizeStd = 1;              % marker size of std values
 
+display.sceneCartersian = 0;            % flag for indicating Cartersian scene or not
+
+display.colors = [1 0 0;
+                  0 1 0;
+                  0 0 1;
+                  0 1 1;
+                  1 0 1;
+                  1 1 0;
+                  0 0 0];
+
+display.std = 1;        % add confidence curves when available
+
+% -------------------------------------------------------------------------
+% dynamic
+display.position = 0;
+display.velocity = 0;
+display.position_error = 0;
+display.velocity_erorr = 0;
+
+% -------------------------------------------------------------------------
+% sensor
+display.sonar_range_perfect = 0;
+display.sonar_azimuth_perfect = 0;
+display.sonar_range = 0;
+display.sonar_azimuth = 0;
+display.sonar_range_error = 0;
+display.sonar_azimuth_error = 0;
+
+% -------------------------------------------------------------------------
+% processing
+display.usedInSolution = 0;     % flag indicate which measurement is used in the solution
+
+display.innovationRange = 0;    % range innovation
+display.innovationAzimuth = 0;  % azimuth innovation
+display.innovationRange_u = 0;    % normalized range innovation
+display.innovationAzimuth_u = 0;  % normalized azimuth innovation
+
+
 switch displayName
     
-    case 'objectTracking'
+    case 'all'
         
+        display.sceneCartersian = 1;
         
+        display.position = 1;
+        display.velocity = 1;
+        display.position_error = 1;
+        display.velocity_erorr = 1;
+        
+        display.sonar_range_perfect = 1;
+        display.sonar_azimuth_perfect = 1;
+        display.sonar_range = 1;
+        display.sonar_azimuth = 1;
+        display.sonar_range_error = 1;
+        display.sonar_azimuth_error = 1;
+        
+        display.usedInSolution = 1;    
+
+        display.innovationRange = 1;   
+        display.innovationAzimuth = 1; 
+        display.innovationRange_u = 1;   
+        display.innovationAzimuth_u = 1;
         
     otherwise
         

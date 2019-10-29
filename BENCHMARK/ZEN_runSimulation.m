@@ -22,7 +22,7 @@
 %
 % *************************************************************
 
-function stat = ZEN_runSimulation()
+function [stat, signals, results] = ZEN_runSimulation()
 
 %% *************************************************************
 % parameters
@@ -104,7 +104,7 @@ end
 %              Display options
 % ***************************************
 
-[display] = ZEN_getDisplayOptions(displayName);
+% [display] = ZEN_getDisplayOptions(displayName);
 
 
 %% **************************************

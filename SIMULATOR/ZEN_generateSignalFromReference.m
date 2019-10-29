@@ -74,7 +74,7 @@ if exist(fullfile(path,file), 'file') == 2
 
         % object trajectory
         figure
-        plot(signals.x, signals.y, 'LineWidth', 2)
+        plot(signals.position(1,:), signals.position(2,:), 'LineWidth', 2)
         xlabel('x [m]')
         ylabel('y [m]')
         title('object trajectory')
@@ -83,7 +83,7 @@ if exist(fullfile(path,file), 'file') == 2
         figure
         hold on 
         for i = 1:numMonteCarlo
-            plot(signals.t, signals.sonar_range(i,:) - signals.range, 'Color','b', 'Marker', 'o');
+            plot(signals.t, signals.sonar_range(i,:) - signals.sonar_range_perfect, 'Color','b', 'Marker', 'o');
         end
         hold off
         xlabel('time [s]')
@@ -94,7 +94,7 @@ if exist(fullfile(path,file), 'file') == 2
         figure
         hold on
         for i = 1:numMonteCarlo
-            plot(signals.t, (signals.sonar_azimuth(i,:) - signals.azimuth)*180/pi, 'Color','b', 'Marker', 'o');
+            plot(signals.t, (signals.sonar_azimuth(i,:) - signals.sonar_azimuth_perfect)*180/pi, 'Color','b', 'Marker', 'o');
         end
         hold off
         xlabel('time [s]')

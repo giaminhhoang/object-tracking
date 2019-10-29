@@ -16,8 +16,7 @@
 % *************************************************************
 
 
-function [Results] = ZEN_objectTrackingEngine(signals, paramsSimulation, dataAlgo, paramsAlgo)
-
+function [resultsAlgo] = ZEN_objectTrackingEngine(signals, paramsSim, dataAlgo, paramsAlgo, idxMonteCarlo)
 
 Npts = length(signals.x);
 
@@ -28,14 +27,27 @@ for i = 1:Npts
     
     % copy measurements in algorithm's data structure
     dataAlgo.t = signals.t;
-    dataAlgo.sonar.range = signals.sonar.range;
-    dataAlgo.sonar.azimuth = signals.sonar.azimuth;
+    dataAlgo.sonar.range = signals.sonar.range(idxMonteCarlo,i);
+    dataAlgo.sonar.azimuth = signals.sonar.azimuth(idxMonteCarlo,i);
     
     if i > 1
-        dataAlgo.Ts = paramsAlgo.Ts;
+        dataAlgo.Ts = resultsAlgo.t(i) - resultsAlgo.t(i-1);
     else
         dataAlgo.Ts = 0;
     end
+    
+    %% ********************************************************************
+    %
+    %                    Initial position and velocity
+    %
+    % *********************************************************************
+    if i == 1
+        % load initial position from reference 
+        paramsAlgo.position0 = signals.position0(:,i);
+        % assume zero initial velocity
+        paramsAlgo.velocity0 = signals.velocity0(:,i);
+    end
+    
     
     % *********************************************************************
     %
@@ -43,7 +55,7 @@ for i = 1:Npts
     %
     % *********************************************************************
     
-    [dataAlgo, paramsAlgo] = objectTrackingEKF(dataAlgo, paramsAlgo);
+    [dataAlgo, paramsAlgo] = ZEN_objectTrackingProcess(dataAlgo, paramsAlgo);
     
     
     % *********************************************************************
@@ -51,6 +63,24 @@ for i = 1:Npts
     %                       Save results
     %
     % *********************************************************************
+    
+    % save filter status
+    resultsAlgo.status(:,i) = dataAlgo.status;
+    
+    % save used in solution
+    resultsAlgo.usedInSolution(:,i) = dataAlgo.usedInSolution;
+    
+    % main outputs
+    resultsAlgo.position(:,i) = dataAlgo.outputs.position;
+    resultsAlgo.velocity(:,i) = dataAlgo.outputs.velocity;
+    resultsAlgo.positionStd(:,i) = dataAlgo.outputs.positionStd;
+    resultsAlgo.velocityStd(:,i) = dataAlgo.outputs.velocityStd;
+    
+    % internal values
+    
+    % standard deviations
+    
+    % innovations
     
     
     
