@@ -14,28 +14,28 @@
 %
 % *************************************************************
 
-function simParams = ZEN_getSimulationParameters(Npts,Ts)
+function paramsSim = ZEN_getSimulationParameters(Npts,Ts)
 
-simParams.algoName = 'EKF_V0';              % algorithm name under test
-simParams.algoConfigName = 'standard';      % settings of the algorithm
-simParams.displayName = 'objectTracking';   % configuration name for plottings
+paramsSim.algoName = 'objectTracking_V0';   % algorithm name under test
+paramsSim.algoConfigName = 'debug';      % settings of the algorithm
+paramsSim.displayName = 'objectTracking';   % configuration name for plottings
 
-simParams.useMex = 1;
-simParams.displayText = 1;
-simParams.displayFig = 1;
+paramsSim.useMex = 1;
+paramsSim.displayText = 1;
+paramsSim.displayFig = 1;
 
 % common parameters
-simParams.Ts = Ts;                                     % sample interval
-simParams.Npts = Npts;                                  % number of points in the simulation
-simParams.t0 = 0;                                       % initial simulation time
-simParams.tEnd = simParams.t0 + (simParams.Npts - 1)*simParams.Ts;     % end of simulation
-simParams.duration = simParams.tEnd - simParams.t0;         % simulation duration
+paramsSim.Ts = Ts;                                     % sample interval
+paramsSim.Npts = Npts;                                  % number of points in the simulation
+paramsSim.t0 = 0;                                       % initial simulation time
+paramsSim.tEnd = paramsSim.t0 + (paramsSim.Npts - 1)*paramsSim.Ts;     % end of simulation
+paramsSim.duration = paramsSim.tEnd - paramsSim.t0;         % simulation duration
 
-simParams.controlRandom = true;
-simParams.numMonteCarloSim = 100;
+paramsSim.controlRandom = true;
+% paramsSim.numMonteCarloSim = 100;
 
 % ***************************************************
 %% loaded trajectory
-simParams.useRandomTrajectory = 0;                         % loaded trajectory from file or simulated
-simParams.loadedTrajectory.t = zeros(1,2048);              % loaded time vector
-simParams.loadedTrajectory.position = zeros(2,2048);       % loaded position
+paramsSim.useRandomTrajectory = 0;                         % loaded trajectory from file or simulated
+paramsSim.loadedTrajectory.t = zeros(1,2048);              % loaded time vector
+paramsSim.loadedTrajectory.position = zeros(2,2048);       % loaded position

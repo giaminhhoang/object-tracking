@@ -1,0 +1,12 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		ZEN_objectTracking_V0_engine_initialize;
+		ZEN_objectTracking_V0_engine_terminate;
+		ZEN_objectTracking_V0_engine_atexit;
+		ZEN_objectTracking_V0_engine;
+	local:
+		*;
+};

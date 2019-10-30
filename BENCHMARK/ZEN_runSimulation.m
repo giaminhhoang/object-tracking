@@ -49,18 +49,18 @@ switch testNum
 
     case 1
 
-        algoName = 'EKF';
-        displayName = 'EKF_objectTracking';
-        profileName = 'debug';
-        algoConfigName = 'standard';
+        algoName = 'objectTracking_V0';
+        displayName = 'objectTracking';
+        profileName = 'submarine';
+        algoConfigName = 'debug';
         Npts = 500;
         Ts = 0.1;
 
     case 2
 
-        algoName = 'EKF_V0';
+        algoName = 'objectTracking_V0';
         displayName = 'objectTracking';
-        profileName = 'demo';
+        profileName = 'submarine';
         algoConfigName = 'debug';
         Npts = 500;
         Ts = 0.1;
@@ -135,7 +135,7 @@ end
 %
 % ***************************************
 
-[results] = ZEN_objectTrackingEngine(signals, simulationParametersSimulation, dataAlgo, simulationParametersAlgo);
+[results] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList);
 
 
 %% **************************************

@@ -20,7 +20,7 @@
 % *************************************************************
 
 
-function Q = getObjectTrackingSystemNoiseCov(q, Ts)
+function Q = ZEN_objectTracking_V0_systemNoiseCov(q, Ts)
 
 Q = eye(4);
 

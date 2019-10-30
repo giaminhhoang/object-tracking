@@ -15,10 +15,13 @@
 %
 % *************************************************************
 
-function [signals] = ZEN_generateDeterministicTrajectory(simParams, profile)
+function [signals] = ZEN_generateDeterministicTrajectory(paramsSim, profile)
 
 % intialize simulation signals
-[signals] = ZEN_initializeSignals(simParams);
+[signals] = ZEN_initializeSignals(paramsSim);
 
-signals.position = simParams.loadedTrajectory.position;
+signals.position = paramsSim.loadedTrajectory.position;
+
+% compute velocity from the reference
+signals.velocity;
 

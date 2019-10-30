@@ -18,7 +18,7 @@
 %
 % *************************************************************
 
-function [H] = getObjectTrackingMeasurementMatrix(Xk)
+function [H] = ZEN_objectTracking_V0_measurementMatrix(Xk)
 
 H = zeros(2,4);
 

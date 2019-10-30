@@ -16,9 +16,12 @@
 % *************************************************************
 
 
-function [resultsAlgo] = ZEN_objectTrackingEngine(signals, paramsSim, dataAlgo, paramsAlgo, idxMonteCarlo)
+function [resultsAlgo] = ZEN_objectTracking_V0_engine(signals, dataAlgo, paramsAlgo)
 
-Npts = length(signals.x);
+% initialize results structure
+[resultsAlgo] = ZEN_initializeResults(signals); 
+
+Npts = length(signals.t);
 
 %% ************************************************************************
 % Main loop
@@ -26,15 +29,15 @@ Npts = length(signals.x);
 for i = 1:Npts
     
     % copy measurements in algorithm's data structure
-    dataAlgo.t = signals.t;
-    dataAlgo.sonar.range = signals.sonar.range(idxMonteCarlo,i);
-    dataAlgo.sonar.azimuth = signals.sonar.azimuth(idxMonteCarlo,i);
+    dataAlgo.t = signals.t(i);
+    dataAlgo.sonar.range = signals.sonar.range(:,i);
+    dataAlgo.sonar.azimuth = signals.sonar.azimuth(:,i);
     
-    if i > 1
-        dataAlgo.Ts = resultsAlgo.t(i) - resultsAlgo.t(i-1);
-    else
-        dataAlgo.Ts = 0;
-    end
+    % if i > 1
+    %    dataAlgo.Ts = resultsAlgo.t(i) - resultsAlgo.t(i-1);
+    % else
+    %    dataAlgo.Ts = 0;
+    % end
     
     %% ********************************************************************
     %
@@ -43,9 +46,9 @@ for i = 1:Npts
     % *********************************************************************
     if i == 1
         % load initial position from reference 
-        paramsAlgo.position0 = signals.position0(:,i);
+        paramsAlgo.position0 = signals.position(:,i);
         % assume zero initial velocity
-        paramsAlgo.velocity0 = signals.velocity0(:,i);
+        paramsAlgo.velocity0 = signals.velocity(:,i);
     end
     
     
@@ -55,7 +58,7 @@ for i = 1:Npts
     %
     % *********************************************************************
     
-    [dataAlgo, paramsAlgo] = ZEN_objectTrackingProcess(dataAlgo, paramsAlgo);
+    [dataAlgo, paramsAlgo] = ZEN_objectTracking_V0_process(dataAlgo, paramsAlgo);
     
     
     % *********************************************************************
@@ -76,14 +79,15 @@ for i = 1:Npts
     resultsAlgo.positionStd(:,i) = dataAlgo.outputs.positionStd;
     resultsAlgo.velocityStd(:,i) = dataAlgo.outputs.velocityStd;
     
-    % internal values
-    
-    % standard deviations
-    
     % innovations
+    resultsAlgo.innovationRange(:,i) = dataAlgo.ekf.innovationRange;
+    resultsAlgo.innovationAzimuth(:,i) = dataAlgo.ekf.innovationAzimuth;
     
+    resultsAlgo.innovationRangeNorm(:,i) = dataAlgo.ekf.innovationRangeNorm;
+    resultsAlgo.innovationAzimuthNorm(:,i) = dataAlgo.ekf.innovationAzimuthNorm;
     
-    
+    resultsAlgo.innovationRangeStd(:,i) = dataAlgo.ekf.innovationRangeStd;
+    resultsAlgo.innovationAzimuthStd(:,i) = dataAlgo.ekf.innovationAzimuthStd;
     
 end
 

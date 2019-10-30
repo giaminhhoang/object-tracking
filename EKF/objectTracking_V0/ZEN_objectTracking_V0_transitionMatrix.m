@@ -18,7 +18,7 @@
 %
 % *************************************************************
 
-function Phi = ZEN_getObjectTrackingTransitionMatrix(Ts)
+function Phi = ZEN_objectTracking_V0_transitionMatrix(Ts)
 
 Phi = eye(4);
 Phi(1,3) = Ts;

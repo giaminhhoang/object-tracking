@@ -19,16 +19,13 @@ function [signals] = ZEN_initializeSignals(paramsSim)
 
 t = [0:paramsSim.Ts:(paramsSim.Npts-1)*paramsSim.Ts] + paramsSim.t0;
 Npts = paramsSim.Npts;
-numMonteCarlo = paramsSim.numMonteCarloSim;
-
+% numMonteCarlo = paramsSim.numMonteCarloSim;
 
 %% ************************************************************************
 %
 %                           Dynamic signals
 %
 % *************************************************************************
-
-
 
 signals.t = t;
 signals.position = zeros(2,Npts);
@@ -41,10 +38,10 @@ signals.velocity = zeros(2,Npts);
 %
 % *************************************************************************
 
-signals.sonar_newMeasurement = zeros(1, Npts);
-signals.sonar_range_perfect = zeros(1, Npts);
-signals.sonar_azimuth_perfect = zeros(1, Npts);
-signals.sonar_range = zeros(numMonteCarlo, Npts);
-signals.sonar_azimuth = zeros(numMonteCarlo, Npts);
+signals.sonar.newMeasurement = zeros(1, Npts);
+signals.sonar.range_perfect = zeros(1, Npts);
+signals.sonar.azimuth_perfect = zeros(1, Npts);
+signals.sonar.range = zeros(1, Npts);
+signals.sonar.azimuth = zeros(1,Npts);
 
 end

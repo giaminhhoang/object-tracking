@@ -19,10 +19,10 @@ function [results, data, paramsAlgo] = ZEN_algoEngine(paramsSim, signals, algoNa
 if paramsSim.useMex 
     switch algoName
         
-        case 'objectTracking_EKF_V0'
+        case 'objectTracking_V0'
             [data, paramsAlgo] = ZEN_objectTrackingInitialization(algoConfigNum);
             paramsAlgo = overwriteParams(paramsAlgo,overwriteParamsList);
-            [results] = ZEN_objectTrackingEngine_mex(signals,paramsSim,data,paramsAlgo);          
+            [results] = ZEN_objectTrackingEngine_mex(signals,data,paramsAlgo);          
             
         otherwise
             error(['Unknown algorithm: ', algoName])
@@ -30,10 +30,10 @@ if paramsSim.useMex
 else
     switch algoName
         
-        case 'objectTracking_EKF_V0'
+        case 'objectTracking_V0'
             [data, paramsAlgo] = ZEN_objectTrackingInitialization(algoConfigNum);
             paramsAlgo = overwriteParams(paramsAlgo,overwriteParamsList);
-            [results] = ZEN_objectTrackingEngine(signals,paramsSim,data,paramsAlgo);          
+            [results] = ZEN_objectTrackingEngine(signals,data,paramsAlgo);          
             
         otherwise
             error(['Unknown algorithm: ', algoName])
