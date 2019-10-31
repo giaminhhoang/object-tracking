@@ -1,11 +1,11 @@
-%% ****************************************************************
+%% ************************************************************************
 %
 %           Description : process a simulation according to a given test
 %           number which defines
-%               * Profile = scenario for test (dynamics + sensors + GNSS + Odometer)
-%               * AlgoName = algorithm used to process the simulation data
-%               * DisplayName = selection of plots to display
-%               * AlgoConfigName = configuration (=set of parameters) used
+%               * profile = scenario for test (dynamics + sonar)
+%               * algoName = algorithm used to process the simulation data
+%               * displayName = selection of plots to display
+%               * algoConfigName = configuration (=set of parameters) used
 %               by the algorithm
 %           
 %
@@ -20,7 +20,7 @@
 %                       - stat : stucture containing simulation
 %                       performances
 %
-% *************************************************************
+% *************************************************************************
 
 function [stat, signals, results] = ZEN_runSimulation()
 
@@ -59,7 +59,7 @@ switch testNum
     case 2
 
         algoName = 'objectTracking_V0';
-        displayName = 'objectTracking';
+        displayName = 'all';
         profileName = 'submarine';
         algoConfigName = 'debug';
         Npts = 500;
@@ -77,26 +77,26 @@ algoConfigNum = ZEN_getAlgoConfigNum(algoConfigName);
 %               Simulation parameters
 % *****************************************
 
-[simParams] = ZEN_getSimulationParameters(Npts, Ts);
-simParams.Ts = Ts;
-simParams.Npts = Npts;
-simParams.useMex = useMex;
+[paramsSim] = ZEN_getSimulationParameters(Npts, Ts);
+paramsSim.Ts = Ts;
+paramsSim.Npts = Npts;
+paramsSim.useMex = useMex;
 
 if useLoadedTrajectory
 
     [valuesRef] = ZEN_readReference();
     Npts = length(valuesRef);
 
-    simParams.Ts = 0.1;
-    simParams.Npts = Npts;
-    simParams.t0 = 0;
-    t = simParams.t0:simParams.Ts:(Npts-1)*simParams.Ts;
+    paramsSim.Ts = 0.1;
+    paramsSim.Npts = Npts;
+    paramsSim.t0 = 0;
+    t = paramsSim.t0:paramsSim.Ts:(Npts-1)*paramsSim.Ts;
 
-    simParams.tEnd = t(end);
-    simParams.useRandomTrajectory = 0;         % trajectory is loaded from file or simulated
+    paramsSim.tEnd = t(end);
+    paramsSim.useRandomTrajectory = 0;         % trajectory is loaded from file or simulated
 
-    simParams.loadedTrajectory.t = t;
-    simParams.loadedTrajectory.position = valuesRef;
+    paramsSim.loadedTrajectory.t = t;
+    paramsSim.loadedTrajectory.position = valuesRef;
 
 end
 
@@ -104,7 +104,7 @@ end
 %              Display options
 % ***************************************
 
-% [display] = ZEN_getDisplayOptions(displayName);
+[display] = ZEN_getDisplayOptions(displayName);
 
 
 %% **************************************
@@ -118,15 +118,14 @@ end
 
 disp('**********************************')
 disp('Simulation parameters: ')
-disp(['Duration: T=', num2str((simParams.Npts-1)*simParams.Ts),'s Ts=', num2str(simParams.Ts),'s']);
-
+disp(['Duration: T=', num2str((paramsSim.Npts-1)*paramsSim.Ts),' s, Ts=', num2str(paramsSim.Ts),' s']);
 
 disp('Simulation...')
 % simulate signals
-if simParams.useMex
-    [signals] = ZEN_simulateSignals_mex(simParams, profile);
+if paramsSim.useMex
+    [signals] = ZEN_simulateSignals_mex(paramsSim, profile);
 else
-    [signals] = ZEN_simulateSignals(simParams, profile);
+    [signals] = ZEN_simulateSignals(paramsSim, profile);
 end
 
 %% **************************************
@@ -144,7 +143,7 @@ end
 %
 % ***************************************
 
-[stat] = ZEN_computeStat(results,signals,simParams);
+[stat] = ZEN_computeStat(results,signals,paramsSim);
 
 
 %% **************************************

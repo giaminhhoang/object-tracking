@@ -80,12 +80,13 @@ display.sonar_azimuth_error = 0;
 
 % -------------------------------------------------------------------------
 % processing
+display.status = 0;
 display.usedInSolution = 0;     % flag indicate which measurement is used in the solution
 
 display.innovationRange = 0;    % range innovation
 display.innovationAzimuth = 0;  % azimuth innovation
-display.innovationRange_u = 0;    % normalized range innovation
-display.innovationAzimuth_u = 0;  % normalized azimuth innovation
+display.innovationRange_norm = 0;    % normalized range innovation
+display.innovationAzimuth_norm = 0;  % normalized azimuth innovation
 
 
 switch displayName
@@ -106,12 +107,13 @@ switch displayName
         display.sonar_range_error = 1;
         display.sonar_azimuth_error = 1;
         
+        display.status = 1;
         display.usedInSolution = 1;    
 
         display.innovationRange = 1;   
         display.innovationAzimuth = 1; 
-        display.innovationRange_u = 1;   
-        display.innovationAzimuth_u = 1;
+        display.innovationRange_norm = 1;   
+        display.innovationAzimuth_norm = 1;
         
     otherwise
         

@@ -15,13 +15,20 @@
 %
 % *************************************************************
 
-function [signals] = ZEN_generateDeterministicTrajectory(paramsSim, profile)
+function [signals] = ZEN_generateDeterministicTrajectory(paramsSim)
 
 % intialize simulation signals
+paramsSim.t0 = paramsSim.loadedTrajectory.t(1);
+paramsSim.duration = paramsSim.loadedTrajectory.t(end)-paramsSim.loadedTrajectory.t(1);
 [signals] = ZEN_initializeSignals(paramsSim);
+paramsSim.Npts = length(signals.t);
 
-signals.position = paramsSim.loadedTrajectory.position;
+for i = 1:2
+    signals.position(i,:) = interp1(paramsSim.loadedTrajectory.t, paramsSim.loadedTrajectory.position(i,:), signals.t);
+end
 
 % compute velocity from the reference
-signals.velocity;
+signals.velocity(:,2:end) = diff(signals.position,1,2)/paramsSim.Ts;
+signals.velocity(:,1) = signals.velocity(:,2);  % first value
 
+end

@@ -15,7 +15,11 @@
 %
 % *************************************************************************
 
-function [signals] = ZEN_simulateSignals(simParams, profile)
+function [signals] = ZEN_simulateSignals(paramsSim, profile)
+
+coder.extrinsic('disp')
+coder.extrinsic('cputime')
+coder.extrinsic('num2str','tic','toc')
 
 %% ************************************************************************
 %
@@ -23,20 +27,23 @@ function [signals] = ZEN_simulateSignals(simParams, profile)
 %
 % *************************************************************************
 
-if simParams.displayText
+if paramsSim.displayText
     disp('Trajectory generation...')
 end
 
 tic;
-if simParams.useRandomTrajectory
-    % for future use
+if paramsSim.useRandomTrajectory
+    % for future use 
+    [signals] = ZEN_generateDeterministicTrajectory(paramsSim); % TBD
 else
-    [signals] = ZEN_generateDeterministicTrajectory(simParams, profile);
+    [signals] = ZEN_generateDeterministicTrajectory(paramsSim);
 end
 
+paramsSim.Npts = length(signals.t);
+
 deltaT1=toc;
-if simParams.displayText
-    disp(['End of trajectory generation (Processing time =', num2str(deltaT1)])
+if paramsSim.displayText
+    disp(['End of trajectory generation (Processing time =', num2str(deltaT1),' s)'])
     disp('Sonar signals generation...');
 end
 
@@ -47,10 +54,10 @@ end
 % *************************************************************************
 
 tic
-signals = ZEN_generateSonar(signals, profile, simParams);
+signals = ZEN_generateSonar(signals, profile);
 deltaT2 = toc;
-if simParams.displayText
-    disp(['End of sonar signals generation (Processing time =', num2str(deltaT2)])
+if paramsSim.displayText
+    disp(['End of sonar signals generation (Processing time =', num2str(deltaT2),' s)'])
 end
  
 end

@@ -24,13 +24,13 @@ switch sonarProfileName
 
     case 'prefect'
         sonar.Ts = 0.1;                         % sonar sampling period in s
-        sonar.rangeStd = 0;                     % sonar range uncertainty in m
-        sonar.azimuthStd = 0;                   % sonar azimuth uncertainty in rad
+        sonar.range_std = 0;                     % sonar range uncertainty in m
+        sonar.azimuth_std = 0;                   % sonar azimuth uncertainty in rad
 
     case 'standard'
         sonar.Ts = 0.1;                         % sonar sampling period in s
-        sonar.rangeStd = 0.1;                   % sonar range uncertainty in m
-        sonar.azimuthStd = 3*deg2rad;           % sonar azimuth uncertainty in rad
+        sonar.range_std = 0.1;                   % sonar range uncertainty in m
+        sonar.azimuth_std = 3*deg2rad;           % sonar azimuth uncertainty in rad
 
     otherwise
         error('Unknown sonar profile')

@@ -23,7 +23,7 @@ switch profileName
         [motion] = ZEN_getMotionModel('loaded');
         [sonar] = ZEN_getSonarModel('perfect');
 
-    case 'demo'
+    case 'submarine'
 
         [motion] = ZEN_getMotionModel('loaded');
         [sonar] = ZEN_getSonarModel('standard');
