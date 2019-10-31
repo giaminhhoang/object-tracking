@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2018b">
-  <configuration build-checksum="2477669125" file="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.prj" location="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0" name="ZEN_objectTracking_V0_engine" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="2108026131" file="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.prj" location="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0" name="ZEN_objectTracking_V0_engine" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
       <param.BuiltInstrumentedMex>false</param.BuiltInstrumentedMex>
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
@@ -852,7 +852,7 @@
     <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
     <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>529497504</param.AnnotationChecksum>
+    <param.AnnotationChecksum>283752471</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
@@ -861,11 +861,11 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\mex\ZEN_objectTracking_V0_engine</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>MEX_FILE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>2477669125</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>1090376974</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot />
     <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;966577925&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;1646302164&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
     <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.NoDefaultJIT>false</param.NoDefaultJIT>
@@ -1073,7 +1073,7 @@
     </unset>
     <fileset.entrypoints>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\ZEN_objectTracking_V0_engine.m">
-        <Marker>1572449781002</Marker>
+        <Marker>1572531494491</Marker>
       </file>
     </fileset.entrypoints>
     <fileset.testbench />
@@ -1085,62 +1085,62 @@
             <Field Name="position" typeId="2" />
             <Field Name="velocity" typeId="2" />
             <Field Name="sonar" typeId="3">
-              <Field Name="newMeasurement" typeId="1" />
+              <Field Name="newMeasurement" typeId="4" />
               <Field Name="range_perfect" typeId="1" />
               <Field Name="azimuth_perfect" typeId="1" />
               <Field Name="range" typeId="1" />
               <Field Name="azimuth" typeId="1" />
             </Field>
           </Input>
-          <Input Name="dataAlgo" typeId="4">
-            <Field Name="t" typeId="5" />
-            <Field Name="t0" typeId="5" />
-            <Field Name="status" typeId="6" />
-            <Field Name="usedInSolution" typeId="6" />
+          <Input Name="dataAlgo" typeId="5">
+            <Field Name="t" typeId="6" />
+            <Field Name="t0" typeId="6" />
+            <Field Name="status" typeId="7" />
+            <Field Name="usedInSolution" typeId="7" />
             <Field Name="sonar" typeId="3">
-              <Field Name="newMeasurement" typeId="6" />
-              <Field Name="range" typeId="5" />
-              <Field Name="azimuth" typeId="5" />
+              <Field Name="newMeasurement" typeId="7" />
+              <Field Name="range" typeId="6" />
+              <Field Name="azimuth" typeId="6" />
             </Field>
             <Field Name="ekf" typeId="3">
-              <Field Name="Ts" typeId="5" />
-              <Field Name="tLastCalled" typeId="5" />
-              <Field Name="tLastUpdated" typeId="5" />
-              <Field Name="Xk" typeId="7" />
-              <Field Name="Pk" typeId="8" />
-              <Field Name="Rk" typeId="9" />
-              <Field Name="innovationRange" typeId="5" />
-              <Field Name="innovationAzimuth" typeId="5" />
-              <Field Name="innovationRangeNorm" typeId="5" />
-              <Field Name="innovationAzimuthNorm" typeId="5" />
-              <Field Name="innovationRangeStd" typeId="5" />
-              <Field Name="innovationAzimuthStd" typeId="5" />
+              <Field Name="Ts" typeId="6" />
+              <Field Name="tLastCalled" typeId="6" />
+              <Field Name="tLastUpdated" typeId="6" />
+              <Field Name="Xk" typeId="8" />
+              <Field Name="Pk" typeId="9" />
+              <Field Name="Rk" typeId="10" />
+              <Field Name="innovationRange" typeId="6" />
+              <Field Name="innovationAzimuth" typeId="6" />
+              <Field Name="innovationRange_norm" typeId="6" />
+              <Field Name="innovationAzimuth_norm" typeId="6" />
+              <Field Name="innovationRange_std" typeId="6" />
+              <Field Name="innovationAzimuth_std" typeId="6" />
             </Field>
             <Field Name="outputs" typeId="3">
-              <Field Name="position" typeId="10" />
-              <Field Name="velocity" typeId="10" />
-              <Field Name="positionStd" typeId="10" />
-              <Field Name="velocityStd" typeId="10" />
+              <Field Name="position" typeId="11" />
+              <Field Name="velocity" typeId="11" />
+              <Field Name="position_std" typeId="11" />
+              <Field Name="velocity_std" typeId="11" />
             </Field>
           </Input>
-          <Input Name="paramsAlgo" typeId="11">
-            <Field Name="algoVersion" typeId="5" />
-            <Field Name="algoSubversion" typeId="5" />
-            <Field Name="platformNum" typeId="6" />
-            <Field Name="bitSonarRangeUsed" typeId="6" />
-            <Field Name="bitSonarAzimuthUsed" typeId="6" />
-            <Field Name="Ts" typeId="5" />
-            <Field Name="maximalUpdatePeriod" typeId="5" />
-            <Field Name="minimalUpdatePeriod" typeId="5" />
-            <Field Name="position0" typeId="10" />
-            <Field Name="velocity0" typeId="10" />
-            <Field Name="positionStd0" typeId="5" />
-            <Field Name="velocityStd0" typeId="5" />
-            <Field Name="accelerationPSD" typeId="5" />
-            <Field Name="sonarRangeStd" typeId="5" />
-            <Field Name="sonarAzimuthStd" typeId="5" />
-            <Field Name="sonarInnovationRangeThreshold" typeId="5" />
-            <Field Name="sonarInnovationAzimuthThreshold" typeId="5" />
+          <Input Name="paramsAlgo" typeId="12">
+            <Field Name="algoVersion" typeId="6" />
+            <Field Name="algoSubversion" typeId="6" />
+            <Field Name="platformNum" typeId="7" />
+            <Field Name="bitSonarRangeUsed" typeId="7" />
+            <Field Name="bitSonarAzimuthUsed" typeId="7" />
+            <Field Name="Ts" typeId="6" />
+            <Field Name="maximalUpdatePeriod" typeId="6" />
+            <Field Name="minimalUpdatePeriod" typeId="6" />
+            <Field Name="position0" typeId="11" />
+            <Field Name="velocity0" typeId="11" />
+            <Field Name="position_std0" typeId="6" />
+            <Field Name="velocity_std0" typeId="6" />
+            <Field Name="acceleration_psd" typeId="6" />
+            <Field Name="sonarRange_std" typeId="6" />
+            <Field Name="sonarAzimuth_std" typeId="6" />
+            <Field Name="sonarInnovationRange_threshold" typeId="6" />
+            <Field Name="sonarInnovationAzimuth_threshold" typeId="6" />
           </Input>
           <idpTable>
             <type typeId="0">
@@ -1184,6 +1184,14 @@
               <Alignment>-1</Alignment>
             </type>
             <type typeId="4">
+              <Class>int8</Class>
+              <Size>1 x 500</Size>
+              <Value />
+              <InitialValue />
+              <UserDefined>true</UserDefined>
+              <Complex>false</Complex>
+            </type>
+            <type typeId="5">
               <Class>struct</Class>
               <Size>1 x 1</Size>
               <Value>dataAlgo</Value>
@@ -1194,7 +1202,7 @@
               <HeaderFile />
               <Alignment>-1</Alignment>
             </type>
-            <type typeId="5">
+            <type typeId="6">
               <Class>double</Class>
               <Size>1 x 1</Size>
               <Value />
@@ -1203,7 +1211,7 @@
               <Complex>false</Complex>
               <Sparse>false</Sparse>
             </type>
-            <type typeId="6">
+            <type typeId="7">
               <Class>int8</Class>
               <Size>1 x 1</Size>
               <Value />
@@ -1211,7 +1219,7 @@
               <UserDefined>true</UserDefined>
               <Complex>false</Complex>
             </type>
-            <type typeId="7">
+            <type typeId="8">
               <Class>double</Class>
               <Size>4 x 1</Size>
               <Value />
@@ -1220,7 +1228,7 @@
               <Complex>false</Complex>
               <Sparse>false</Sparse>
             </type>
-            <type typeId="8">
+            <type typeId="9">
               <Class>double</Class>
               <Size>4 x 4</Size>
               <Value />
@@ -1229,7 +1237,7 @@
               <Complex>false</Complex>
               <Sparse>false</Sparse>
             </type>
-            <type typeId="9">
+            <type typeId="10">
               <Class>double</Class>
               <Size>2 x 2</Size>
               <Value />
@@ -1238,7 +1246,7 @@
               <Complex>false</Complex>
               <Sparse>false</Sparse>
             </type>
-            <type typeId="10">
+            <type typeId="11">
               <Class>double</Class>
               <Size>2 x 1</Size>
               <Value />
@@ -1247,7 +1255,7 @@
               <Complex>false</Complex>
               <Sparse>false</Sparse>
             </type>
-            <type typeId="11">
+            <type typeId="12">
               <Class>struct</Class>
               <Size>1 x 1</Size>
               <Value>paramsAlgo</Value>

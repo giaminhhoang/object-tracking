@@ -26,10 +26,10 @@ switch dataAlgo.status
     case 0 % not initialized, first call
         
         % initalize covariance matrix
-        dataAlgo.ekf.Pk = diag([paramsAlgo.positionStd0^2;...
-                                paramsAlgo.positionStd0^2;...
-                                paramsAlgo.velocityStd0^2;...
-                                paramsAlgo.velocityStd0^2]);
+        dataAlgo.ekf.Pk = diag([paramsAlgo.position_std0^2;...
+                                paramsAlgo.position_std0^2;...
+                                paramsAlgo.velocity_std0^2;...
+                                paramsAlgo.velocity_std0^2]);
         
         % initialize state
         dataAlgo.ekf.Xk = [paramsAlgo.position0;...
@@ -41,9 +41,9 @@ switch dataAlgo.status
         
         % output results
         dataAlgo.outputs.position = dataAlgo.ekf.Xk(1:2,:);
-        dataAlgo.outputs.positionStd = sqrt(abs(diag(dataAlgo.ekf.Pk(1:2,1:2))));
+        dataAlgo.outputs.position_std = sqrt(abs(diag(dataAlgo.ekf.Pk(1:2,1:2))));
         dataAlgo.outputs.velocity = dataAlgo.ekf.Xk(3:4,:);
-        dataAlgo.outputs.velocityStd = sqrt(abs(diag(dataAlgo.ekf.Pk(3:4,3:4))));
+        dataAlgo.outputs.velocity_std = sqrt(abs(diag(dataAlgo.ekf.Pk(3:4,3:4))));
         
     case 1 % normal operation mode
         
@@ -77,11 +77,11 @@ end
 
 % position
 dataAlgo.outputs.position = dataAlgo.ekf.Xk(1:2,:);
-dataAlgo.outputs.positionStd = sqrt(abs(diag(dataAlgo.ekf.Pk(1:2,1:2))));
+dataAlgo.outputs.position_std = sqrt(abs(diag(dataAlgo.ekf.Pk(1:2,1:2))));
 
 % velocity
 dataAlgo.outputs.velocity = dataAlgo.ekf.Xk(3:4,:);
-dataAlgo.outputs.velocityStd = sqrt(abs(diag(dataAlgo.ekf.Pk(3:4,3:4))));
+dataAlgo.outputs.velocity_std = sqrt(abs(diag(dataAlgo.ekf.Pk(3:4,3:4))));
 
 end
 

@@ -17,77 +17,77 @@
 #include <string.h>
 
 /* Variable Definitions */
-static emlrtRSInfo qb_emlrtRSI = { 67, /* lineNo */
+static emlrtRSInfo rb_emlrtRSI = { 67, /* lineNo */
   "lusolve",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo rb_emlrtRSI = { 109,/* lineNo */
+static emlrtRSInfo sb_emlrtRSI = { 109,/* lineNo */
   "lusolveNxN",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo sb_emlrtRSI = { 107,/* lineNo */
+static emlrtRSInfo tb_emlrtRSI = { 107,/* lineNo */
   "lusolveNxN",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo tb_emlrtRSI = { 119,/* lineNo */
+static emlrtRSInfo ub_emlrtRSI = { 119,/* lineNo */
   "lusolveNxN",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo ub_emlrtRSI = { 121,/* lineNo */
+static emlrtRSInfo vb_emlrtRSI = { 121,/* lineNo */
   "lusolveNxN",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo wb_emlrtRSI = { 27, /* lineNo */
+static emlrtRSInfo xb_emlrtRSI = { 27, /* lineNo */
   "xgetrf",                            /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo xb_emlrtRSI = { 90, /* lineNo */
+static emlrtRSInfo yb_emlrtRSI = { 90, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo yb_emlrtRSI = { 82, /* lineNo */
+static emlrtRSInfo ac_emlrtRSI = { 82, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo ac_emlrtRSI = { 78, /* lineNo */
+static emlrtRSInfo bc_emlrtRSI = { 78, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo bc_emlrtRSI = { 58, /* lineNo */
+static emlrtRSInfo cc_emlrtRSI = { 58, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo cc_emlrtRSI = { 57, /* lineNo */
+static emlrtRSInfo dc_emlrtRSI = { 57, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo dc_emlrtRSI = { 50, /* lineNo */
+static emlrtRSInfo ec_emlrtRSI = { 50, /* lineNo */
   "ceval_xgetrf",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgetrf.m"/* pathName */
 };
 
-static emlrtRSInfo hc_emlrtRSI = { 90, /* lineNo */
+static emlrtRSInfo ic_emlrtRSI = { 90, /* lineNo */
   "warn_singular",                     /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\lusolve.m"/* pathName */
 };
 
-static emlrtRSInfo ic_emlrtRSI = { 77, /* lineNo */
+static emlrtRSInfo jc_emlrtRSI = { 77, /* lineNo */
   "xtrsm",                             /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+blas\\xtrsm.m"/* pathName */
 };
 
-static emlrtRSInfo jc_emlrtRSI = { 76, /* lineNo */
+static emlrtRSInfo kc_emlrtRSI = { 76, /* lineNo */
   "xtrsm",                             /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+blas\\xtrsm.m"/* pathName */
 };
@@ -98,7 +98,7 @@ static emlrtMCInfo emlrtMCI = { 47,    /* lineNo */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\lib\\matlab\\elmat\\repmat.m"/* pName */
 };
 
-static emlrtRSInfo ed_emlrtRSI = { 47, /* lineNo */
+static emlrtRSInfo fd_emlrtRSI = { 47, /* lineNo */
   "repmat",                            /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\lib\\matlab\\elmat\\repmat.m"/* pathName */
 };
@@ -150,7 +150,7 @@ void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
   emlrtStack e_st;
   st.prev = sp;
   st.tls = sp->tls;
-  st.site = &qb_emlrtRSI;
+  st.site = &rb_emlrtRSI;
   b_st.prev = &st;
   b_st.tls = st.tls;
   c_st.prev = &b_st;
@@ -159,19 +159,19 @@ void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
   d_st.tls = c_st.tls;
   e_st.prev = &d_st;
   e_st.tls = d_st.tls;
-  b_st.site = &sb_emlrtRSI;
+  b_st.site = &tb_emlrtRSI;
   loop_ub = A_size[0] * A_size[1];
   if (0 <= loop_ub - 1) {
     memcpy(&b_A_data[0], &A_data[0], loop_ub * sizeof(real_T));
   }
 
-  c_st.site = &wb_emlrtRSI;
-  d_st.site = &dc_emlrtRSI;
+  c_st.site = &xb_emlrtRSI;
+  d_st.site = &ec_emlrtRSI;
   if ((A_size[0] == 0) || (A_size[1] == 0)) {
     info = 0;
   } else {
-    d_st.site = &cc_emlrtRSI;
-    d_st.site = &cc_emlrtRSI;
+    d_st.site = &dc_emlrtRSI;
+    d_st.site = &dc_emlrtRSI;
     i = muIntScalarMin_sint32(A_size[1], A_size[1]);
     loop_ub = muIntScalarMax_sint32(i, 1);
     if ((int8_T)loop_ub != loop_ub) {
@@ -179,17 +179,17 @@ void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
       m = emlrtCreateCharArray(2, iv);
       emlrtInitCharArrayR2013a(&d_st, 15, m, &u[0]);
       emlrtAssign(&y, m);
-      e_st.site = &ed_emlrtRSI;
+      e_st.site = &fd_emlrtRSI;
       error(&e_st, y, &emlrtMCI);
     }
 
+    d_st.site = &cc_emlrtRSI;
     d_st.site = &bc_emlrtRSI;
     d_st.site = &ac_emlrtRSI;
-    d_st.site = &yb_emlrtRSI;
     info_t = LAPACKE_dgetrf_work(102, (ptrdiff_t)A_size[1], (ptrdiff_t)A_size[1],
       &b_A_data[0], (ptrdiff_t)A_size[1], &ipiv_t_data[0]);
     info = (int32_T)info_t;
-    d_st.site = &xb_emlrtRSI;
+    d_st.site = &yb_emlrtRSI;
     if (info < 0) {
       if (info == -1010) {
         emlrtErrorWithMessageIdR2018a(&d_st, &c_emlrtRTEI, "MATLAB:nomem",
@@ -208,15 +208,15 @@ void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
   }
 
   if (((A_size[0] != 1) || (A_size[1] != 1)) && (info > 0)) {
-    b_st.site = &rb_emlrtRSI;
-    c_st.site = &hc_emlrtRSI;
+    b_st.site = &sb_emlrtRSI;
+    c_st.site = &ic_emlrtRSI;
     warning(&c_st);
   }
 
-  b_st.site = &tb_emlrtRSI;
+  b_st.site = &ub_emlrtRSI;
   if (A_size[1] >= 1) {
+    c_st.site = &kc_emlrtRSI;
     c_st.site = &jc_emlrtRSI;
-    c_st.site = &ic_emlrtRSI;
     temp = 1.0;
     DIAGA1 = 'N';
     TRANSA1 = 'N';
@@ -230,10 +230,10 @@ void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
           &lda_t, &B_data[0], &ldb_t);
   }
 
-  b_st.site = &ub_emlrtRSI;
+  b_st.site = &vb_emlrtRSI;
   if (A_size[1] >= 1) {
+    c_st.site = &kc_emlrtRSI;
     c_st.site = &jc_emlrtRSI;
-    c_st.site = &ic_emlrtRSI;
     temp = 1.0;
     DIAGA1 = 'U';
     TRANSA1 = 'N';

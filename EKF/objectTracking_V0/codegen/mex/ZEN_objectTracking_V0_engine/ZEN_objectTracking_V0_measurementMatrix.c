@@ -8,20 +8,15 @@
 /* Include files */
 #include "ZEN_objectTracking_V0_measurementMatrix.h"
 #include "ZEN_objectTracking_V0_engine.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 #include "mwmathutil.h"
 #include "rt_nonfinite.h"
 #include <string.h>
 
 /* Variable Definitions */
-static emlrtRSInfo jb_emlrtRSI = { 25, /* lineNo */
+static emlrtRSInfo kb_emlrtRSI = { 25, /* lineNo */
   "ZEN_objectTracking_V0_measurementMatrix",/* fcnName */
   "C:\\Users\\minh\\Documents\\my work\\object-tracking\\EKF\\objectTracking_V0\\ZEN_objectTracking_V0_measurementMatrix.m"/* pathName */
-};
-
-static emlrtRTEInfo emlrtRTEI = { 13,  /* lineNo */
-  9,                                   /* colNo */
-  "sqrt",                              /* fName */
-  "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\lib\\matlab\\elfun\\sqrt.m"/* pName */
 };
 
 /* Function Definitions */
@@ -54,7 +49,7 @@ void c_ZEN_objectTracking_V0_measure(const emlrtStack *sp, const real_T Xk[4],
   /*  */
   /*  ************************************************************* */
   memset(&H[0], 0, 8U * sizeof(real_T));
-  st.site = &jb_emlrtRSI;
+  st.site = &kb_emlrtRSI;
   range = Xk[0] * Xk[0] + Xk[1] * Xk[1];
   if (range < 0.0) {
     emlrtErrorWithMessageIdR2018a(&st, &emlrtRTEI,

@@ -27,7 +27,7 @@ function [stat, signals, results] = ZEN_runSimulation()
 %% *************************************************************
 % parameters
 useLoadedTrajectory = 1;        % 1: load trajectory, 0: generate random trajectory (TODO) 
-useMex = 0;                     % run in mex to speed up
+useMex = 1;                     % run in mex to speed up
 
 %% **************************************
 %
@@ -50,8 +50,8 @@ switch testNum
     case 1
 
         algoName = 'objectTracking_V0';
-        displayName = 'objectTracking';
-        profileName = 'submarine';
+        displayName = 'all';
+        profileName = 'debug';
         algoConfigName = 'debug';
         Npts = 500;
         Ts = 0.1;
@@ -84,7 +84,9 @@ paramsSim.useMex = useMex;
 
 if useLoadedTrajectory
 
-    [valuesRef] = ZEN_readReference();
+    % [valuesRef] = ZEN_readReference();
+    load('object_trajectory.mat')  % hardcode the data
+    valuesRef = x_traj_pos;
     Npts = length(valuesRef);
 
     paramsSim.Ts = 0.1;
@@ -134,16 +136,26 @@ end
 %
 % ***************************************
 
-[results] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList);
+% EKF implementation
+if paramsSim.displayText
+    disp('Processing...')
+end
+t0 = cputime;
+overwriteParamsList = [];
+[results, dataAlgo, paramsAlgo] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList);
 
+t1 = cputime;
+if paramsSim.displayText
+    disp(['Processing duration =', num2str(t1-t0,'%3.2f'),' s'])
+end
 
-%% **************************************
+%% ************************************************************************
 %
 %              Compute stats
 %
-% ***************************************
+% *************************************************************************
 
-[stat] = ZEN_computeStat(results,signals,paramsSim);
+% [stat] = ZEN_computeStat(results,signals,paramsSim);
 
 
 %% **************************************
@@ -151,16 +163,16 @@ end
 %               Display            
 %
 % ***************************************
-
-display = ZEN_displayDynamicSignals();
-display = ZEN_displaySensorSignanls();
-display = ZEN_displayAlgorithmSignals();
-
+if paramsSim.displayFig
+    display = ZEN_displayDynamicSignals(signals, results, display);
+    display = ZEN_displaySensorSignals(signals, display);
+    display = ZEN_displayAlgorithmSignals(results, display);
+end
 
 disp('**********************************')
-disp(['Statistics'])
+disp('Statistics')
 
-
+end
 
 
 

@@ -19,10 +19,10 @@ function algoConfigNum = ZEN_getAlgoConfigNum(algoConfigName)
 switch algoConfigName
     
     case 'debug'
-        algoConfigNum = int32(100);
+        algoConfigNum = int8(100);
         
     otherwise
-        algoConfigNum = int32(-1);
+        algoConfigNum = int8(-1);
         error([algoConfigName, ': unknown configuration']);
 end
         

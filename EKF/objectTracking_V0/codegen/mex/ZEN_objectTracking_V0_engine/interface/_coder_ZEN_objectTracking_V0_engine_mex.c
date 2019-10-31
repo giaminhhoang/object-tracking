@@ -15,13 +15,14 @@
 
 /* Function Declarations */
 MEXFUNCTION_LINKAGE void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray
-  *plhs[1], int32_T nrhs, const mxArray *prhs[3]);
+  *plhs[2], int32_T nrhs, const mxArray *prhs[3]);
 
 /* Function Definitions */
-void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[1], int32_T
+void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[2], int32_T
   nrhs, const mxArray *prhs[3])
 {
-  const mxArray *outputs[1];
+  const mxArray *outputs[2];
+  int32_T b_nlhs;
   emlrtStack st = { NULL,              /* site */
     NULL,                              /* tls */
     NULL                               /* prev */
@@ -35,7 +36,7 @@ void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[1], int32_T
                         28, "ZEN_objectTracking_V0_engine");
   }
 
-  if (nlhs > 1) {
+  if (nlhs > 2) {
     emlrtErrMsgIdAndTxt(&st, "EMLRT:runTime:TooManyOutputArguments", 3, 4, 28,
                         "ZEN_objectTracking_V0_engine");
   }
@@ -44,7 +45,13 @@ void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[1], int32_T
   ZEN_objectTracking_V0_engine_api(prhs, nlhs, outputs);
 
   /* Copy over outputs to the caller. */
-  emlrtReturnArrays(1, plhs, outputs);
+  if (nlhs < 1) {
+    b_nlhs = 1;
+  } else {
+    b_nlhs = nlhs;
+  }
+
+  emlrtReturnArrays(b_nlhs, plhs, outputs);
 }
 
 void mexFunction(int32_T nlhs, mxArray *plhs[], int32_T nrhs, const mxArray

@@ -30,17 +30,17 @@ results.usedInSolution = zeros(1,Npts,'int8');
 % main outputs
 results.position = zeros(2,Npts);
 results.velocity = zeros(2,Npts);
-results.positionStd = zeros(2,Npts);
-results.velocityStd = zeros(2,Npts);
+results.position_std = zeros(2,Npts);
+results.velocity_std = zeros(2,Npts);
     
 % innovations
-results.innovationRange = zeros(2,Npts);
-results.innovationAzimuth = zeros(2,Npts);
+results.innovationRange = zeros(1,Npts);
+results.innovationAzimuth = zeros(1,Npts);
     
-results.innovationRangeNorm = zeros(2,Npts);
-results.innovationAzimuthNorm = zeros(2,Npts);
+results.innovationRange_norm = zeros(1,Npts);
+results.innovationAzimuth_norm = zeros(1,Npts);
     
-results.innovationRangeStd = zeros(2,Npts);
-results.innovationAzimuthStd = zeros(2,Npts);
+results.innovationRange_std = zeros(1,Npts);
+results.innovationAzimuth_std = zeros(1,Npts);
 
 end

@@ -16,11 +16,12 @@
 % *************************************************************
 
 
-function [resultsAlgo] = ZEN_objectTracking_V0_engine(signals, dataAlgo, paramsAlgo)
+function [resultsAlgo, dataAlgo] = ZEN_objectTracking_V0_engine(signals, dataAlgo, paramsAlgo)
 
 % initialize results structure
 [resultsAlgo] = ZEN_initializeResults(signals); 
 
+resultsAlgo.t = signals.t;
 Npts = length(signals.t);
 
 %% ************************************************************************
@@ -30,6 +31,7 @@ for i = 1:Npts
     
     % copy measurements in algorithm's data structure
     dataAlgo.t = signals.t(i);
+    dataAlgo.sonar.newMeasurement = signals.sonar.newMeasurement(:,i);
     dataAlgo.sonar.range = signals.sonar.range(:,i);
     dataAlgo.sonar.azimuth = signals.sonar.azimuth(:,i);
     
@@ -76,18 +78,18 @@ for i = 1:Npts
     % main outputs
     resultsAlgo.position(:,i) = dataAlgo.outputs.position;
     resultsAlgo.velocity(:,i) = dataAlgo.outputs.velocity;
-    resultsAlgo.positionStd(:,i) = dataAlgo.outputs.positionStd;
-    resultsAlgo.velocityStd(:,i) = dataAlgo.outputs.velocityStd;
+    resultsAlgo.position_std(:,i) = dataAlgo.outputs.position_std;
+    resultsAlgo.velocity_std(:,i) = dataAlgo.outputs.velocity_std;
     
     % innovations
     resultsAlgo.innovationRange(:,i) = dataAlgo.ekf.innovationRange;
     resultsAlgo.innovationAzimuth(:,i) = dataAlgo.ekf.innovationAzimuth;
     
-    resultsAlgo.innovationRangeNorm(:,i) = dataAlgo.ekf.innovationRangeNorm;
-    resultsAlgo.innovationAzimuthNorm(:,i) = dataAlgo.ekf.innovationAzimuthNorm;
+    resultsAlgo.innovationRange_norm(:,i) = dataAlgo.ekf.innovationRange_norm;
+    resultsAlgo.innovationAzimuth_norm(:,i) = dataAlgo.ekf.innovationAzimuth_norm;
     
-    resultsAlgo.innovationRangeStd(:,i) = dataAlgo.ekf.innovationRangeStd;
-    resultsAlgo.innovationAzimuthStd(:,i) = dataAlgo.ekf.innovationAzimuthStd;
+    resultsAlgo.innovationRange_std(:,i) = dataAlgo.ekf.innovationRange_std;
+    resultsAlgo.innovationAzimuth_std(:,i) = dataAlgo.ekf.innovationAzimuth_std;
     
 end
 

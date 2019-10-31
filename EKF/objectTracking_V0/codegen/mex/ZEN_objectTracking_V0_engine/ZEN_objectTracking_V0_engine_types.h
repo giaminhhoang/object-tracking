@@ -15,7 +15,7 @@
 #define typedef_struct1_T
 
 typedef struct {
-  real_T newMeasurement[500];
+  int8_T newMeasurement[500];
   real_T range_perfect[500];
   real_T azimuth_perfect[500];
   real_T range[500];
@@ -59,10 +59,10 @@ typedef struct {
   real_T Rk[4];
   real_T innovationRange;
   real_T innovationAzimuth;
-  real_T innovationRangeNorm;
-  real_T innovationAzimuthNorm;
-  real_T innovationRangeStd;
-  real_T innovationAzimuthStd;
+  real_T innovationRange_norm;
+  real_T innovationAzimuth_norm;
+  real_T innovationRange_std;
+  real_T innovationAzimuth_std;
 } struct4_T;
 
 #endif                                 /*typedef_struct4_T*/
@@ -73,8 +73,8 @@ typedef struct {
 typedef struct {
   real_T position[2];
   real_T velocity[2];
-  real_T positionStd[2];
-  real_T velocityStd[2];
+  real_T position_std[2];
+  real_T velocity_std[2];
 } struct5_T;
 
 #endif                                 /*typedef_struct5_T*/
@@ -108,13 +108,13 @@ typedef struct {
   real_T minimalUpdatePeriod;
   real_T position0[2];
   real_T velocity0[2];
-  real_T positionStd0;
-  real_T velocityStd0;
-  real_T accelerationPSD;
-  real_T sonarRangeStd;
-  real_T sonarAzimuthStd;
-  real_T sonarInnovationRangeThreshold;
-  real_T sonarInnovationAzimuthThreshold;
+  real_T position_std0;
+  real_T velocity_std0;
+  real_T acceleration_psd;
+  real_T sonarRange_std;
+  real_T sonarAzimuth_std;
+  real_T sonarInnovationRange_threshold;
+  real_T c_sonarInnovationAzimuth_thresh;
 } struct6_T;
 
 #endif                                 /*typedef_struct6_T*/
@@ -128,14 +128,14 @@ typedef struct {
   int8_T usedInSolution[500];
   real_T position[1000];
   real_T velocity[1000];
-  real_T positionStd[1000];
-  real_T velocityStd[1000];
-  real_T innovationRange[1000];
-  real_T innovationAzimuth[1000];
-  real_T innovationRangeNorm[1000];
-  real_T innovationAzimuthNorm[1000];
-  real_T innovationRangeStd[1000];
-  real_T innovationAzimuthStd[1000];
+  real_T position_std[1000];
+  real_T velocity_std[1000];
+  real_T innovationRange[500];
+  real_T innovationAzimuth[500];
+  real_T innovationRange_norm[500];
+  real_T innovationAzimuth_norm[500];
+  real_T innovationRange_std[500];
+  real_T innovationAzimuth_std[500];
 } struct7_T;
 
 #endif                                 /*typedef_struct7_T*/

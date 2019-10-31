@@ -14,15 +14,15 @@
 %
 % *************************************************************************
 
-function [results, data, paramsAlgo] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList)
+function [results, dataAlgo, paramsAlgo] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList)
 
 if paramsSim.useMex 
     switch algoName
         
         case 'objectTracking_V0'
-            [data, paramsAlgo] = ZEN_objectTrackingInitialization(algoConfigNum);
+            [dataAlgo, paramsAlgo] = ZEN_objectTracking_V0_init(algoConfigNum);
             paramsAlgo = overwriteParams(paramsAlgo,overwriteParamsList);
-            [results] = ZEN_objectTrackingEngine_mex(signals,data,paramsAlgo);          
+            [results, dataAlgo] = ZEN_objectTracking_V0_engine_mex(signals,dataAlgo,paramsAlgo);          
             
         otherwise
             error(['Unknown algorithm: ', algoName])
@@ -31,9 +31,9 @@ else
     switch algoName
         
         case 'objectTracking_V0'
-            [data, paramsAlgo] = ZEN_objectTrackingInitialization(algoConfigNum);
+            [dataAlgo, paramsAlgo] = ZEN_objectTracking_V0_init(algoConfigNum);
             paramsAlgo = overwriteParams(paramsAlgo,overwriteParamsList);
-            [results] = ZEN_objectTrackingEngine(signals,data,paramsAlgo);          
+            [results, dataAlgo] = ZEN_objectTracking_V0_engine(signals,dataAlgo,paramsAlgo);          
             
         otherwise
             error(['Unknown algorithm: ', algoName])
@@ -44,7 +44,7 @@ end
 
 function params = overwriteParams(params, overwriteParamsList)
     
-for i = length(overwriteParamsList)
+for i = 1:length(overwriteParamsList)
     
     if isfield(params,overwriteParamsList(i).name)
         

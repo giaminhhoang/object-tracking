@@ -27,7 +27,7 @@ Xk = dataAlgo.ekf.Xk;               % state vector
 updateSolution = false;             % flad indicate that solution is updated
 
 % measurement noise covariance matrix
-dataAlgo.ekf.Rk = diag([paramsAlgo.sonarRangeStd^2; paramsAlgo.sonarAzimuthStd^2]);
+dataAlgo.ekf.Rk = diag([paramsAlgo.sonarRange_std^2; paramsAlgo.sonarAzimuth_std^2]);
 
 %% ************************************************************************
 % compute sampling period since last call
@@ -45,7 +45,7 @@ dataAlgo.ekf.tLastCalled = dataAlgo.t;
 % compute transition matrix
 [Phi] = ZEN_objectTracking_V0_transitionMatrix(dataAlgo.ekf.Ts);
 
-[Qk] = ZEN_objectTracking_V0_systemNoiseCov(paramsAlgo.accelerationPSD, dataAlgo.ekf.Ts);
+[Qk] = ZEN_objectTracking_V0_systemNoiseCov(paramsAlgo.acceleration_psd, dataAlgo.ekf.Ts);
 
 % prediction step
 Xk = Phi*Xk;
@@ -65,9 +65,11 @@ Rk = dataAlgo.ekf.Rk;
 % innovation covariance matrix
 Ck = Hk*Pk*Hk' + Rk;
 
+delta_z = zeros(2,1);
 % compute innovations
 if dataAlgo.sonar.newMeasurement
-    delta_z = [dataAlgo.sonar.range; dataAlgo.sonar.azimuth] - Hk*Xk;
+    delta_z(1,1) = dataAlgo.sonar.range - sqrt(Xk(1,1)^2 + Xk(2,1)^2);
+    delta_z(2,1) = dataAlgo.sonar.azimuth - atan2(Xk(2,1), Xk(1,1));
 else
     delta_z = zeros(2,1);
 end
@@ -75,17 +77,17 @@ dataAlgo.ekf.innovationRange = delta_z(1,1);
 dataAlgo.ekf.innovationAzimuth = delta_z(2,1);
 
 % compute normamized innovations
-dataAlgo.ekf.innovationRangeStd = sqrt(abs(Ck(1,1)));
-dataAlgo.ekf.innovationAzimuthStd = sqrt(abs(Ck(2,2)));
-dataAlgo.ekf.innovationRangeNorm = dataAlgo.ekf.innovationRange/dataAlgo.ekf.innovationRangeStd;
-dataAlgo.ekf.innovationRangeNorm = dataAlgo.ekf.innovationAzimuth/dataAlgo.ekf.innovationAzimuthStd;
+dataAlgo.ekf.innovationRange_std = sqrt(abs(Ck(1,1)));
+dataAlgo.ekf.innovationAzimuth_std = sqrt(abs(Ck(2,2)));
+dataAlgo.ekf.innovationRange_norm = dataAlgo.ekf.innovationRange/dataAlgo.ekf.innovationRange_std;
+dataAlgo.ekf.innovationAzimuth_norm = dataAlgo.ekf.innovationAzimuth/dataAlgo.ekf.innovationAzimuth_std;
 
 % select matrix is usded to discard inconsistent measurements
 selectMatrix = [];
 
 % check integrity
-sonarRangeInnovationTest = dataAlgo.ekf.innovationRangeNorm < paramsAlgo.sonarInnovationRangeThreshold;
-sonarAzimuthInnovationTest = dataAlgo.ekf.innovationAzimuthNorm < paramsAlgo.sonarInnovationAzimuthThreshold;
+sonarRangeInnovationTest = abs(dataAlgo.ekf.innovationRange_norm) < paramsAlgo.sonarInnovationRange_threshold;
+sonarAzimuthInnovationTest = abs(dataAlgo.ekf.innovationAzimuth_norm) < paramsAlgo.sonarInnovationAzimuth_threshold;
 
 if sonarRangeInnovationTest
     % if valid , set the corresponding flag

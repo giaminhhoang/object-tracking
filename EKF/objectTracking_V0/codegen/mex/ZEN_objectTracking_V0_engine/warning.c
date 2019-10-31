@@ -23,7 +23,7 @@ static emlrtMCInfo c_emlrtMCI = { 14,  /* lineNo */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\shared\\coder\\coder\\lib\\+coder\\+internal\\warning.m"/* pName */
 };
 
-static emlrtRSInfo fd_emlrtRSI = { 14, /* lineNo */
+static emlrtRSInfo gd_emlrtRSI = { 14, /* lineNo */
   "warning",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\shared\\coder\\coder\\lib\\+coder\\+internal\\warning.m"/* pathName */
 };
@@ -120,7 +120,7 @@ void b_warning(const emlrtStack *sp, int32_T varargin_1, const char_T
   m4 = emlrtCreateCharArray(2, iv3);
   emlrtInitCharArrayR2013a(sp, 14, m4, &varargin_2[0]);
   emlrtAssign(&e_y, m4);
-  st.site = &fd_emlrtRSI;
+  st.site = &gd_emlrtRSI;
   b_feval(&st, y, c_feval(&st, b_y, c_y, d_y, e_y, &b_emlrtMCI), &c_emlrtMCI);
 }
 
@@ -160,7 +160,7 @@ void warning(const emlrtStack *sp)
   m2 = emlrtCreateCharArray(2, iv2);
   emlrtInitCharArrayR2013a(sp, 21, m2, &msgID[0]);
   emlrtAssign(&c_y, m2);
-  st.site = &fd_emlrtRSI;
+  st.site = &gd_emlrtRSI;
   b_feval(&st, y, feval(&st, b_y, c_y, &b_emlrtMCI), &c_emlrtMCI);
 }
 

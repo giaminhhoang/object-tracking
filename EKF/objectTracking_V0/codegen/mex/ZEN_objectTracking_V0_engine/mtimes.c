@@ -13,7 +13,47 @@
 #include <string.h>
 
 /* Function Definitions */
-void b_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[8],
+void b_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
+              B_data[], const int32_T B_size[2], real_T C_data[], int32_T
+              C_size[2])
+{
+  int32_T loop_ub;
+  char_T TRANSB1;
+  char_T TRANSA1;
+  real_T alpha1;
+  real_T beta1;
+  ptrdiff_t m_t;
+  ptrdiff_t n_t;
+  ptrdiff_t k_t;
+  ptrdiff_t lda_t;
+  ptrdiff_t ldb_t;
+  ptrdiff_t ldc_t;
+  if ((A_size[0] == 0) || (B_size[0] == 0)) {
+    C_size[0] = A_size[0];
+    C_size[1] = B_size[0];
+    loop_ub = A_size[0] * B_size[0];
+    if (0 <= loop_ub - 1) {
+      memset(&C_data[0], 0, loop_ub * sizeof(real_T));
+    }
+  } else {
+    TRANSB1 = 'T';
+    TRANSA1 = 'N';
+    alpha1 = 1.0;
+    beta1 = 0.0;
+    m_t = (ptrdiff_t)A_size[0];
+    n_t = (ptrdiff_t)B_size[0];
+    k_t = (ptrdiff_t)2;
+    lda_t = (ptrdiff_t)A_size[0];
+    ldb_t = (ptrdiff_t)B_size[0];
+    ldc_t = (ptrdiff_t)A_size[0];
+    C_size[0] = A_size[0];
+    C_size[1] = B_size[0];
+    dgemm(&TRANSA1, &TRANSB1, &m_t, &n_t, &k_t, &alpha1, &A_data[0], &lda_t,
+          &B_data[0], &ldb_t, &beta1, &C_data[0], &ldc_t);
+  }
+}
+
+void c_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[8],
               real_T C_data[], int32_T C_size[2])
 {
   char_T TRANSB1;
@@ -47,7 +87,7 @@ void b_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[8],
   }
 }
 
-void c_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[2],
+void d_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[2],
               real_T C_data[], int32_T C_size[1])
 {
   char_T TRANSB1;
@@ -79,7 +119,7 @@ void c_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[2],
   }
 }
 
-void d_mtimes(const real_T A[16], const real_T B_data[], const int32_T B_size[2],
+void e_mtimes(const real_T A[16], const real_T B_data[], const int32_T B_size[2],
               real_T C_data[], int32_T C_size[2])
 {
   char_T TRANSB1;
@@ -113,7 +153,7 @@ void d_mtimes(const real_T A[16], const real_T B_data[], const int32_T B_size[2]
   }
 }
 
-void e_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[16],
+void f_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[16],
               real_T C_data[], int32_T C_size[2])
 {
   char_T TRANSB1;
@@ -147,7 +187,7 @@ void e_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[16]
   }
 }
 
-void f_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
+void g_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
               B_data[], const int32_T B_size[2], real_T C_data[], int32_T
               C_size[2])
 {
@@ -187,7 +227,7 @@ void f_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
   }
 }
 
-void g_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
+void h_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
               B_data[], const int32_T B_size[1], real_T C[4])
 {
   char_T TRANSB1;
@@ -221,7 +261,7 @@ void g_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
   }
 }
 
-void h_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
+void i_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
               B_data[], const int32_T B_size[2], real_T C[16])
 {
   char_T TRANSB1;
@@ -252,10 +292,9 @@ void h_mtimes(const real_T A_data[], const int32_T A_size[2], const real_T
   }
 }
 
-void mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B_data[],
-            const int32_T B_size[2], real_T C_data[], int32_T C_size[2])
+void mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B[4],
+            real_T C_data[], int32_T C_size[2])
 {
-  int32_T loop_ub;
   char_T TRANSB1;
   char_T TRANSA1;
   real_T alpha1;
@@ -266,28 +305,24 @@ void mtimes(const real_T A_data[], const int32_T A_size[2], const real_T B_data[
   ptrdiff_t lda_t;
   ptrdiff_t ldb_t;
   ptrdiff_t ldc_t;
-  if ((A_size[0] == 0) || (B_size[0] == 0)) {
-    C_size[0] = A_size[0];
-    C_size[1] = B_size[0];
-    loop_ub = A_size[0] * B_size[0];
-    if (0 <= loop_ub - 1) {
-      memset(&C_data[0], 0, loop_ub * sizeof(real_T));
-    }
+  if (A_size[0] == 0) {
+    C_size[0] = 0;
+    C_size[1] = 2;
   } else {
-    TRANSB1 = 'T';
+    TRANSB1 = 'N';
     TRANSA1 = 'N';
     alpha1 = 1.0;
     beta1 = 0.0;
     m_t = (ptrdiff_t)A_size[0];
-    n_t = (ptrdiff_t)B_size[0];
+    n_t = (ptrdiff_t)2;
     k_t = (ptrdiff_t)2;
     lda_t = (ptrdiff_t)A_size[0];
-    ldb_t = (ptrdiff_t)B_size[0];
+    ldb_t = (ptrdiff_t)2;
     ldc_t = (ptrdiff_t)A_size[0];
     C_size[0] = A_size[0];
-    C_size[1] = B_size[0];
-    dgemm(&TRANSA1, &TRANSB1, &m_t, &n_t, &k_t, &alpha1, &A_data[0], &lda_t,
-          &B_data[0], &ldb_t, &beta1, &C_data[0], &ldc_t);
+    C_size[1] = 2;
+    dgemm(&TRANSA1, &TRANSB1, &m_t, &n_t, &k_t, &alpha1, &A_data[0], &lda_t, &B
+          [0], &ldb_t, &beta1, &C_data[0], &ldc_t);
   }
 }
 

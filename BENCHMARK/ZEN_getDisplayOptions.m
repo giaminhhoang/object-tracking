@@ -67,7 +67,7 @@ display.std = 1;        % add confidence curves when available
 display.position = 0;
 display.velocity = 0;
 display.position_error = 0;
-display.velocity_erorr = 0;
+display.velocity_error = 0;
 
 % -------------------------------------------------------------------------
 % sensor
@@ -98,7 +98,7 @@ switch displayName
         display.position = 1;
         display.velocity = 1;
         display.position_error = 1;
-        display.velocity_erorr = 1;
+        display.velocity_error = 1;
         
         display.sonar_range_perfect = 1;
         display.sonar_azimuth_perfect = 1;

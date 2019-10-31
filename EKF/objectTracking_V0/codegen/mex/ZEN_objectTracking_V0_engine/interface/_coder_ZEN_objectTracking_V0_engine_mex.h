@@ -19,7 +19,7 @@
 
 /* Function Declarations */
 MEXFUNCTION_LINKAGE void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray
-  *plhs[1], int32_T nrhs, const mxArray *prhs[3]);
+  *plhs[2], int32_T nrhs, const mxArray *prhs[3]);
 MEXFUNCTION_LINKAGE void mexFunction(int32_T nlhs, mxArray *plhs[], int32_T nrhs,
   const mxArray *prhs[]);
 emlrtCTX mexFunctionCreateRootTLS(void);

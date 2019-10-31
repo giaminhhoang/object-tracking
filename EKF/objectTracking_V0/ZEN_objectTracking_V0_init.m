@@ -31,16 +31,16 @@ dataAlgo.ekf.Rk = eye(2);
 
 dataAlgo.ekf.innovationRange = 0;
 dataAlgo.ekf.innovationAzimuth = 0;
-dataAlgo.ekf.innovationRangeNorm = 0;
-dataAlgo.ekf.innovationAzimuthNorm = 0;
-dataAlgo.ekf.innovationRangeStd = 0;
-dataAlgo.ekf.innovationAzimuthStd = 0;
+dataAlgo.ekf.innovationRange_norm = 0;
+dataAlgo.ekf.innovationAzimuth_norm = 0;
+dataAlgo.ekf.innovationRange_std = 0;
+dataAlgo.ekf.innovationAzimuth_std = 0;
 
 % main outputs
 dataAlgo.outputs.position = zeros(2,1);
 dataAlgo.outputs.velocity = zeros(2,1);
-dataAlgo.outputs.positionStd = zeros(2,1);
-dataAlgo.outputs.velocityStd = zeros(2,1);
+dataAlgo.outputs.position_std = zeros(2,1);
+dataAlgo.outputs.velocity_std = zeros(2,1);
 
 %% params structure defintion
 paramsAlgo.algoVersion = 0;
@@ -59,16 +59,16 @@ paramsAlgo.minimalUpdatePeriod = 0;
 % initial position velocity and their uncertainties
 paramsAlgo.position0 = zeros(2,1);
 paramsAlgo.velocity0 = zeros(2,1);
-paramsAlgo.positionStd0 = 1;
-paramsAlgo.velocityStd0 = 1;
+paramsAlgo.position_std0 = 10;
+paramsAlgo.velocity_std0 = 10;
 
 % vehicle dynamics
-paramsAlgo.accelerationPSD = 10;     % acceleration PSD (m^2/s^3) 
+paramsAlgo.acceleration_psd = 1;     % acceleration PSD (m^2/s^3) 
 
 % Sonar parameters
-paramsAlgo.sonarRangeStd = 0.1;
-paramsAlgo.sonarAzimuthStd = 3*deg2rad;
-paramsAlgo.sonarInnovationRangeThreshold = 6;
-paramsAlgo.sonarInnovationAzimuthThreshold = 6;
+paramsAlgo.sonarRange_std = 0.1;
+paramsAlgo.sonarAzimuth_std = 3*deg2rad;
+paramsAlgo.sonarInnovationRange_threshold = 100;
+paramsAlgo.sonarInnovationAzimuth_threshold = 100;
 
 end

@@ -16,72 +16,72 @@
 #include <string.h>
 
 /* Variable Definitions */
-static emlrtRSInfo kc_emlrtRSI = { 35, /* lineNo */
+static emlrtRSInfo lc_emlrtRSI = { 35, /* lineNo */
   "qrsolve",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo lc_emlrtRSI = { 39, /* lineNo */
+static emlrtRSInfo mc_emlrtRSI = { 39, /* lineNo */
   "qrsolve",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo mc_emlrtRSI = { 46, /* lineNo */
+static emlrtRSInfo nc_emlrtRSI = { 46, /* lineNo */
   "qrsolve",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo nc_emlrtRSI = { 57, /* lineNo */
+static emlrtRSInfo oc_emlrtRSI = { 57, /* lineNo */
   "xgeqp3",                            /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo oc_emlrtRSI = { 85, /* lineNo */
+static emlrtRSInfo pc_emlrtRSI = { 85, /* lineNo */
   "ceval_xgeqp3",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo pc_emlrtRSI = { 86, /* lineNo */
+static emlrtRSInfo qc_emlrtRSI = { 86, /* lineNo */
   "ceval_xgeqp3",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo qc_emlrtRSI = { 119,/* lineNo */
+static emlrtRSInfo rc_emlrtRSI = { 119,/* lineNo */
   "ceval_xgeqp3",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo rc_emlrtRSI = { 123,/* lineNo */
+static emlrtRSInfo sc_emlrtRSI = { 123,/* lineNo */
   "ceval_xgeqp3",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo sc_emlrtRSI = { 132,/* lineNo */
+static emlrtRSInfo tc_emlrtRSI = { 132,/* lineNo */
   "ceval_xgeqp3",                      /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xgeqp3.m"/* pathName */
 };
 
-static emlrtRSInfo tc_emlrtRSI = { 131,/* lineNo */
+static emlrtRSInfo uc_emlrtRSI = { 131,/* lineNo */
   "rankFromQR",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo uc_emlrtRSI = { 130,/* lineNo */
+static emlrtRSInfo vc_emlrtRSI = { 130,/* lineNo */
   "rankFromQR",                        /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo vc_emlrtRSI = { 79, /* lineNo */
+static emlrtRSInfo wc_emlrtRSI = { 79, /* lineNo */
   "LSQFromQR",                         /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\qrsolve.m"/* pathName */
 };
 
-static emlrtRSInfo wc_emlrtRSI = { 31, /* lineNo */
+static emlrtRSInfo xc_emlrtRSI = { 31, /* lineNo */
   "xunormqr",                          /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xunormqr.m"/* pathName */
 };
 
-static emlrtRSInfo cd_emlrtRSI = { 102,/* lineNo */
+static emlrtRSInfo dd_emlrtRSI = { 102,/* lineNo */
   "ceval_xunormqr",                    /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\+lapack\\xunormqr.m"/* pathName */
 };
@@ -92,7 +92,7 @@ static emlrtMCInfo d_emlrtMCI = { 53,  /* lineNo */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\flt2str.m"/* pName */
 };
 
-static emlrtRSInfo gd_emlrtRSI = { 53, /* lineNo */
+static emlrtRSInfo hd_emlrtRSI = { 53, /* lineNo */
   "flt2str",                           /* fcnName */
   "C:\\Program Files\\MATLAB\\R2019b\\toolbox\\eml\\eml\\+coder\\+internal\\flt2str.m"/* pathName */
 };
@@ -104,14 +104,14 @@ static const mxArray *b_sprintf(const emlrtStack *sp, const mxArray *b, const
   mxArray *c, emlrtMCInfo *location);
 static void emlrt_marshallIn(const emlrtStack *sp, const mxArray
   *a__output_of_sprintf_, const char_T *identifier, char_T y[14]);
-static void u_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+static void v_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId, char_T ret[14]);
 
 /* Function Definitions */
 static void b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId, char_T y[14])
 {
-  u_emlrt_marshallIn(sp, emlrtAlias(u), parentId, y);
+  v_emlrt_marshallIn(sp, emlrtAlias(u), parentId, y);
   emlrtDestroyArray(&u);
 }
 
@@ -136,7 +136,7 @@ static void emlrt_marshallIn(const emlrtStack *sp, const mxArray
   emlrtDestroyArray(&a__output_of_sprintf_);
 }
 
-static void u_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+static void v_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
   emlrtMsgIdentifier *msgId, char_T ret[14])
 {
   static const int32_T dims[2] = { 1, 14 };
@@ -188,7 +188,7 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
   emlrtStack d_st;
   st.prev = sp;
   st.tls = sp->tls;
-  st.site = &kc_emlrtRSI;
+  st.site = &lc_emlrtRSI;
   b_st.prev = &st;
   b_st.tls = st.tls;
   c_st.prev = &b_st;
@@ -207,10 +207,10 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
     memset(&jpvt_data[0], 0, minmn * sizeof(int32_T));
   }
 
-  b_st.site = &nc_emlrtRSI;
+  b_st.site = &oc_emlrtRSI;
   minmana = muIntScalarMin_sint32(A_size[0], A_size[1]);
-  c_st.site = &oc_emlrtRSI;
   c_st.site = &pc_emlrtRSI;
+  c_st.site = &qc_emlrtRSI;
   if ((A_size[0] == 0) || (A_size[1] == 0)) {
     if (0 <= minmana - 1) {
       memset(&tau_data[0], 0, minmana * sizeof(real_T));
@@ -224,12 +224,12 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
       jpvt_t_data[i] = (ptrdiff_t)0;
     }
 
-    c_st.site = &qc_emlrtRSI;
     c_st.site = &rc_emlrtRSI;
+    c_st.site = &sc_emlrtRSI;
     info_t = LAPACKE_dgeqp3(102, (ptrdiff_t)A_size[0], (ptrdiff_t)A_size[1],
       &b_A_data[0], (ptrdiff_t)A_size[0], &jpvt_t_data[0], &tau_data[0]);
     maxmn = (int32_T)info_t;
-    c_st.site = &sc_emlrtRSI;
+    c_st.site = &tc_emlrtRSI;
     if (maxmn != 0) {
       p = true;
       if (maxmn != -4) {
@@ -273,7 +273,7 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
     }
   }
 
-  st.site = &lc_emlrtRSI;
+  st.site = &mc_emlrtRSI;
   minmana = 0;
   tol = 0.0;
   if (A_size[0] < A_size[1]) {
@@ -293,7 +293,7 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
   }
 
   if (minmana < minmn) {
-    b_st.site = &tc_emlrtRSI;
+    b_st.site = &uc_emlrtRSI;
     y = NULL;
     m = emlrtCreateCharArray(2, iv);
     emlrtInitCharArrayR2013a(&b_st, 6, m, &rfmt[0]);
@@ -301,14 +301,14 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
     b_y = NULL;
     m1 = emlrtCreateDoubleScalar(tol);
     emlrtAssign(&b_y, m1);
-    c_st.site = &gd_emlrtRSI;
+    c_st.site = &hd_emlrtRSI;
     emlrt_marshallIn(&c_st, b_sprintf(&c_st, y, b_y, &d_emlrtMCI),
                      "<output of sprintf>", str);
-    b_st.site = &uc_emlrtRSI;
+    b_st.site = &vc_emlrtRSI;
     b_warning(&b_st, minmana, str);
   }
 
-  st.site = &mc_emlrtRSI;
+  st.site = &nc_emlrtRSI;
   na = B_size[0];
   maxmn = B_size[0] * B_size[1];
   if (0 <= maxmn - 1) {
@@ -322,15 +322,15 @@ void qrsolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2
     memset(&Y_data[0], 0, maxmn * sizeof(real_T));
   }
 
-  b_st.site = &vc_emlrtRSI;
-  c_st.site = &wc_emlrtRSI;
+  b_st.site = &wc_emlrtRSI;
+  c_st.site = &xc_emlrtRSI;
   if ((A_size[0] != 0) && (A_size[1] != 0) && (B_size[0] != 0)) {
     nrc_t = (ptrdiff_t)B_size[0];
     info_t = LAPACKE_dormqr(102, 'L', 'T', nrc_t, (ptrdiff_t)4, (ptrdiff_t)
       muIntScalarMin_sint32(A_size[0], A_size[1]), &b_A_data[0], (ptrdiff_t)
       A_size[0], &tau_data[0], &b_B_data[0], nrc_t);
     maxmn = (int32_T)info_t;
-    d_st.site = &cd_emlrtRSI;
+    d_st.site = &dd_emlrtRSI;
     if (maxmn != 0) {
       p = true;
       b_p = false;
