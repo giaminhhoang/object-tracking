@@ -6,20 +6,20 @@
  */
 
 /* Include files */
-#include "_coder_ZEN_objectTracking_V0_engine_mex.h"
 #include "ZEN_objectTracking_V0_engine.h"
-#include "ZEN_objectTracking_V0_engine_data.h"
-#include "ZEN_objectTracking_V0_engine_initialize.h"
+#include "_coder_ZEN_objectTracking_V0_engine_mex.h"
 #include "ZEN_objectTracking_V0_engine_terminate.h"
 #include "_coder_ZEN_objectTracking_V0_engine_api.h"
+#include "ZEN_objectTracking_V0_engine_initialize.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 
 /* Function Declarations */
-MEXFUNCTION_LINKAGE void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray
-  *plhs[2], int32_T nrhs, const mxArray *prhs[3]);
+static void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[2],
+  int32_T nrhs, const mxArray *prhs[3]);
 
 /* Function Definitions */
-void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[2], int32_T
-  nrhs, const mxArray *prhs[3])
+static void c_ZEN_objectTracking_V0_engine_(int32_T nlhs, mxArray *plhs[2],
+  int32_T nrhs, const mxArray *prhs[3])
 {
   const mxArray *outputs[2];
   int32_T b_nlhs;

@@ -1,11 +1,12 @@
 /*
  * ZEN_objectTracking_V0_engine_types.h
  *
- * Code generation for function 'ZEN_objectTracking_V0_engine_types'
+ * Code generation for function 'ZEN_objectTracking_V0_engine'
  *
  */
 
-#pragma once
+#ifndef ZEN_OBJECTTRACKING_V0_ENGINE_TYPES_H
+#define ZEN_OBJECTTRACKING_V0_ENGINE_TYPES_H
 
 /* Include files */
 #include "rtwtypes.h"
@@ -130,6 +131,8 @@ typedef struct {
   real_T velocity[1000];
   real_T position_std[1000];
   real_T velocity_std[1000];
+  real_T position_error[1000];
+  real_T velocity_error[1000];
   real_T innovationRange[500];
   real_T innovationAzimuth[500];
   real_T innovationRange_norm[500];
@@ -139,5 +142,6 @@ typedef struct {
 } struct7_T;
 
 #endif                                 /*typedef_struct7_T*/
+#endif
 
 /* End of code generation (ZEN_objectTracking_V0_engine_types.h) */

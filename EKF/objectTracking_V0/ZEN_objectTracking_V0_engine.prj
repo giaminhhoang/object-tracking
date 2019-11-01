@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2018b">
-  <configuration build-checksum="2108026131" file="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.prj" location="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0" name="ZEN_objectTracking_V0_engine" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="710815116" file="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.prj" location="C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0" name="ZEN_objectTracking_V0_engine" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
       <param.BuiltInstrumentedMex>false</param.BuiltInstrumentedMex>
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
@@ -157,7 +157,6 @@
       <param.EnableSignedRightShifts>true</param.EnableSignedRightShifts>
       <param.ParenthesesLevel>option.ParenthesesLevel.Nominal</param.ParenthesesLevel>
       <param.MaxIdLength>31</param.MaxIdLength>
-      <param.HeaderGuardStyle>option.HeaderGuardStyle.UseIncludeGuard</param.HeaderGuardStyle>
       <param.DataTypeReplacement>option.DataTypeReplacement.CBuiltIn</param.DataTypeReplacement>
       <param.EnableCustomReplacementTypes>false</param.EnableCustomReplacementTypes>
       <param.ReplacementTypes.double />
@@ -172,11 +171,6 @@
       <param.ReplacementTypes.int64 />
       <param.ReplacementTypes.char />
       <param.ReplacementTypes.logical />
-      <param.ReplacementTypes.ImportCustomTypes>false</param.ReplacementTypes.ImportCustomTypes>
-      <param.ReplacementTypes.HeaderFiles />
-      <param.CppInterfaceStyle>option.CppInterfaceStyle.Functions</param.CppInterfaceStyle>
-      <param.CppInterfaceClassName />
-      <param.CustomFileNameStr>$N$M</param.CustomFileNameStr>
       <param.CustomSymbolStrGlobalVar>$M$N</param.CustomSymbolStrGlobalVar>
       <param.CustomSymbolStrType>$M$N</param.CustomSymbolStrType>
       <param.CustomSymbolStrField>$M$N</param.CustomSymbolStrField>
@@ -199,7 +193,6 @@
       <param.SILPILCheckConstantInputs>true</param.SILPILCheckConstantInputs>
       <param.SILPILSyncGlobalData>true</param.SILPILSyncGlobalData>
       <param.CodeExecutionProfiling>false</param.CodeExecutionProfiling>
-      <param.CodeProfilingInstrumentation>false</param.CodeProfilingInstrumentation>
       <param.DefaultTestFile />
       <param.MergeInstrumentationResults>false</param.MergeInstrumentationResults>
       <param.RanPilSilVerification>false</param.RanPilSilVerification>
@@ -221,13 +214,13 @@
       <param.BuildConfiguration>Faster Builds</param.BuildConfiguration>
       <param.CustomToolchainOptions />
       <var.ToolchainSettingsVisible>true</var.ToolchainSettingsVisible>
-      <param.target.Data>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;ctdata&gt;&lt;configuredHardware/&gt;&lt;/ctdata&gt;</param.target.Data>
+      <param.target.Data />
       <param.target.ActiveType>option.target.TargetType.MatlabHost</param.target.ActiveType>
       <param.target.ActiveTarget />
       <param.HardwareVendor.Production>Generic</param.HardwareVendor.Production>
       <param.HardwareType.Production>MATLAB Host Computer</param.HardwareType.Production>
       <param.HWDeviceType.Production />
-      <var.instance.enabled.Production />
+      <var.instance.enabled.Production>true</var.instance.enabled.Production>
       <param.HardwareSizeChar.Production>8</param.HardwareSizeChar.Production>
       <param.HardwareSizeShort.Production>16</param.HardwareSizeShort.Production>
       <param.HardwareSizeInt.Production>32</param.HardwareSizeInt.Production>
@@ -248,7 +241,7 @@
       <param.HardwareVendor.Target>Generic</param.HardwareVendor.Target>
       <param.HardwareType.Target>MATLAB Host Computer</param.HardwareType.Target>
       <param.HWDeviceType.Target />
-      <var.instance.enabled.Target />
+      <var.instance.enabled.Target>false</var.instance.enabled.Target>
       <param.HardwareSizeChar.Target>8</param.HardwareSizeChar.Target>
       <param.HardwareSizeShort.Target>16</param.HardwareSizeShort.Target>
       <param.HardwareSizeInt.Target>32</param.HardwareSizeInt.Target>
@@ -266,7 +259,6 @@
       <param.HardwareAtomicIntegerSize.Target>option.HardwareAtomicIntegerSize.Char</param.HardwareAtomicIntegerSize.Target>
       <param.HardwareAtomicFloatSize.Target>option.HardwareAtomicFloatSize.None</param.HardwareAtomicFloatSize.Target>
       <param.HardwareDivisionRounding.Target>option.HardwareDivisionRounding.Zero</param.HardwareDivisionRounding.Target>
-      <var.SuppressHardwareChange>false</var.SuppressHardwareChange>
       <param.CastingMode>option.CastingMode.Nominal</param.CastingMode>
       <param.IndentStyle>option.IndentStyle.K&amp;R</param.IndentStyle>
       <param.IndentSize>2</param.IndentSize>
@@ -274,8 +266,6 @@
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
       <param.CompileTimeRecursionLimit>50</param.CompileTimeRecursionLimit>
       <param.EnableRuntimeRecursion>true</param.EnableRuntimeRecursion>
-      <param.RunInitializeFcn>true</param.RunInitializeFcn>
-      <param.IncludeInitializeFcn>true</param.IncludeInitializeFcn>
       <param.IncludeTerminateFcn>true</param.IncludeTerminateFcn>
       <param.GenerateExampleMain>option.GenerateExampleMain.GenerateCodeOnly</param.GenerateExampleMain>
       <param.PreserveVariableNames>option.PreserveVariableNames.None</param.PreserveVariableNames>
@@ -301,7 +291,7 @@
       <param.CustomBLASCallback />
       <param.GenerateDefaultInSwitch>false</param.GenerateDefaultInSwitch>
       <param.EnableTraceability>true</param.EnableTraceability>
-      <param.UseECoderFeatures>false</param.UseECoderFeatures>
+      <param.UseECoderFeatures>true</param.UseECoderFeatures>
       <param.psCustomPrjState />
       <param.psCustomProjectFile />
       <param.psCheckConfValue />
@@ -341,7 +331,6 @@
         <param.EnableSignedRightShifts />
         <param.ParenthesesLevel />
         <param.MaxIdLength />
-        <param.HeaderGuardStyle />
         <param.DataTypeReplacement />
         <param.EnableCustomReplacementTypes />
         <param.ReplacementTypes.double />
@@ -356,11 +345,6 @@
         <param.ReplacementTypes.int64 />
         <param.ReplacementTypes.char />
         <param.ReplacementTypes.logical />
-        <param.ReplacementTypes.ImportCustomTypes />
-        <param.ReplacementTypes.HeaderFiles />
-        <param.CppInterfaceStyle />
-        <param.CppInterfaceClassName />
-        <param.CustomFileNameStr />
         <param.CustomSymbolStrGlobalVar />
         <param.CustomSymbolStrType />
         <param.CustomSymbolStrField />
@@ -383,7 +367,6 @@
         <param.SILPILCheckConstantInputs />
         <param.SILPILSyncGlobalData />
         <param.CodeExecutionProfiling />
-        <param.CodeProfilingInstrumentation />
         <param.DefaultTestFile />
         <param.MergeInstrumentationResults />
         <param.RanPilSilVerification />
@@ -405,6 +388,7 @@
         <param.BuildConfiguration />
         <param.CustomToolchainOptions />
         <var.ToolchainSettingsVisible />
+        <param.target.Data />
         <param.target.ActiveType />
         <param.target.ActiveTarget />
         <param.HardwareVendor.Production />
@@ -435,7 +419,6 @@
         <param.HardwareEndianness.Target />
         <param.HardwareAtomicIntegerSize.Target />
         <param.HardwareAtomicFloatSize.Target />
-        <var.SuppressHardwareChange />
         <param.CastingMode />
         <param.IndentStyle />
         <param.IndentSize />
@@ -443,8 +426,6 @@
         <param.ConstantFoldingTimeout />
         <param.CompileTimeRecursionLimit />
         <param.EnableRuntimeRecursion />
-        <param.RunInitializeFcn />
-        <param.IncludeInitializeFcn />
         <param.IncludeTerminateFcn />
         <param.GenerateExampleMain />
         <param.PreserveVariableNames />
@@ -529,7 +510,6 @@
       <param.hdl.ResourceSharing />
       <param.hdl.ConstantMultiplierOptimization />
       <param.hdl.LoopOptimization />
-      <param.hdl.AggressiveDataflowConversion />
       <param.GenerateComments>true</param.GenerateComments>
       <param.MATLABSourceComments>false</param.MATLABSourceComments>
       <param.hdl.VHDLFileExt />
@@ -701,7 +681,6 @@
         <param.hdl.ResourceSharing />
         <param.hdl.ConstantMultiplierOptimization />
         <param.hdl.LoopOptimization />
-        <param.hdl.AggressiveDataflowConversion />
         <param.GenerateComments />
         <param.MATLABSourceComments />
         <param.hdl.VHDLFileExt />
@@ -830,13 +809,14 @@
     <param.objective>option.objective.c</param.objective>
     <param.WorkflowStep>workflowSummary</param.WorkflowStep>
     <param.TestSnippets />
+    <param.DefaultImportExportVariable>config</param.DefaultImportExportVariable>
     <param.ExternalFcnMajority>column</param.ExternalFcnMajority>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
     <param.outputfile>${PROJECT_ROOT}\ZEN_objectTracking_V0_engine_mex.mexw64</param.outputfile>
     <param.version>R2012a</param.version>
-    <param.HasECoderFeatures>false</param.HasECoderFeatures>
-    <param.HasGpuCoder>false</param.HasGpuCoder>
-    <var.HasNeuralNetworkToolbox>false</var.HasNeuralNetworkToolbox>
+    <param.HasECoderFeatures>true</param.HasECoderFeatures>
+    <param.HasGpuCoder>true</param.HasGpuCoder>
+    <var.HasNeuralNetworkToolbox>true</var.HasNeuralNetworkToolbox>
     <param.newGlobals>
       <Globals>
         <idpTable />
@@ -852,7 +832,7 @@
     <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
     <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>283752471</param.AnnotationChecksum>
+    <param.AnnotationChecksum>983886460</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
@@ -861,11 +841,11 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\mex\ZEN_objectTracking_V0_engine</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>MEX_FILE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>1090376974</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>84518937</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot />
     <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;1646302164&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;2698059507&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
     <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\BENCHMARK\ZEN_initializeResults.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_ekf.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_engine.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_measurementMatrix.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_process.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_systemNoiseCov.m&lt;/file&gt;&lt;file&gt;C:\Users\minh\Documents\my work\object-tracking\EKF\objectTracking_V0\ZEN_objectTracking_V0_transitionMatrix.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.NoDefaultJIT>false</param.NoDefaultJIT>
@@ -873,26 +853,22 @@
     <var.isGpuCoder>false</var.isGpuCoder>
     <var.notGpuCoder>true</var.notGpuCoder>
     <var.boundToGui>true</var.boundToGui>
-    <var.isConfigDialog>false</var.isConfigDialog>
-    <var.ecoderEnabled>false</var.ecoderEnabled>
     <param.mex.outputfile>ZEN_objectTracking_V0_engine_mex</param.mex.outputfile>
     <param.grt.outputfile>ZEN_objectTracking_V0_engine</param.grt.outputfile>
     <param.artifact>option.target.artifact.mex</param.artifact>
     <param.outputfile>${PROJECT_ROOT}\ZEN_objectTracking_V0_engine_mex.mexw64</param.outputfile>
-    <param.CppNamespace />
     <param.gpu.Enabled>false</param.gpu.Enabled>
     <param.gpu.KernelNamePrefix />
     <param.gpu.SelectCudaDevice>-1</param.gpu.SelectCudaDevice>
-    <param.gpu.MaxKernelDepth>0</param.gpu.MaxKernelDepth>
-    <param.gpu.MallocMode />
+    <param.gpu.MallocMode>discrete</param.gpu.MallocMode>
     <param.gpu.MallocThreshold>200</param.gpu.MallocThreshold>
     <param.gpu.StackLimitPerThread>1024</param.gpu.StackLimitPerThread>
-    <param.gpu.EnableCUBLAS>false</param.gpu.EnableCUBLAS>
-    <param.gpu.EnableCUSOLVER>false</param.gpu.EnableCUSOLVER>
-    <param.gpu.EnableCUFFT>false</param.gpu.EnableCUFFT>
+    <param.gpu.EnableCUBLAS>true</param.gpu.EnableCUBLAS>
+    <param.gpu.EnableCUSOLVER>true</param.gpu.EnableCUSOLVER>
+    <param.gpu.EnableCUFFT>true</param.gpu.EnableCUFFT>
     <param.gpu.Benchmarking>false</param.gpu.Benchmarking>
     <param.gpu.SafeBuild>false</param.gpu.SafeBuild>
-    <param.gpu.ComputeCapability />
+    <param.gpu.ComputeCapability>3.5</param.gpu.ComputeCapability>
     <param.gpu.CustomComputeCapability />
     <param.gpu.CompilerFlags />
     <var.checkIssuesGpu>false</var.checkIssuesGpu>
@@ -907,7 +883,7 @@
     <param.tensorrt.NumCalibrationBatches>1</param.tensorrt.NumCalibrationBatches>
     <param.cudnn.AutoTuning>true</param.cudnn.AutoTuning>
     <param.cudnn.DataType>option.cudnn.datatype.fp32</param.cudnn.DataType>
-    <param.arm-compute.ArmComputeVersion>option.arm-compute.version.19_02</param.arm-compute.ArmComputeVersion>
+    <param.arm-compute.ArmComputeVersion>option.arm-compute.version.18_05</param.arm-compute.ArmComputeVersion>
     <param.arm-compute.ArmArchitecture>option.arm-compute.architecture.unspecified</param.arm-compute.ArmArchitecture>
     <param.TargetLang>option.TargetLang.C</param.TargetLang>
     <param.EnableAutoExtrinsicCalls>true</param.EnableAutoExtrinsicCalls>
@@ -959,6 +935,7 @@
     <unset>
       <param.objective />
       <param.TestSnippets />
+      <param.DefaultImportExportVariable />
       <param.ExternalFcnMajority />
       <param.UseGlobals />
       <param.outputfile />
@@ -989,16 +966,12 @@
       <param.configImportActive />
       <var.isGpuCoder />
       <var.notGpuCoder />
-      <var.isConfigDialog />
-      <var.ecoderEnabled />
       <param.mex.outputfile />
       <param.grt.outputfile />
       <param.artifact />
-      <param.CppNamespace />
       <param.gpu.Enabled />
       <param.gpu.KernelNamePrefix />
       <param.gpu.SelectCudaDevice />
-      <param.gpu.MaxKernelDepth />
       <param.gpu.MallocMode />
       <param.gpu.MallocThreshold />
       <param.gpu.StackLimitPerThread />
@@ -1073,7 +1046,7 @@
     </unset>
     <fileset.entrypoints>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\ZEN_objectTracking_V0_engine.m">
-        <Marker>1572531494491</Marker>
+        <Marker>1572560658972</Marker>
       </file>
     </fileset.entrypoints>
     <fileset.testbench />
@@ -1275,14 +1248,44 @@
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2019b</root>
+      <root>C:\Program Files\Polyspace\R2019a</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
         </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>

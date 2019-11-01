@@ -6,11 +6,11 @@
  */
 
 /* Include files */
-#include "ZEN_objectTracking_V0_engine_terminate.h"
-#include "ZEN_objectTracking_V0_engine.h"
-#include "ZEN_objectTracking_V0_engine_data.h"
-#include "_coder_ZEN_objectTracking_V0_engine_mex.h"
 #include "rt_nonfinite.h"
+#include "ZEN_objectTracking_V0_engine.h"
+#include "ZEN_objectTracking_V0_engine_terminate.h"
+#include "_coder_ZEN_objectTracking_V0_engine_mex.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 
 /* Function Definitions */
 void ZEN_objectTracking_V0_engine_atexit(void)

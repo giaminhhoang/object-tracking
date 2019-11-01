@@ -32,6 +32,10 @@ results.position = zeros(2,Npts);
 results.velocity = zeros(2,Npts);
 results.position_std = zeros(2,Npts);
 results.velocity_std = zeros(2,Npts);
+
+% errors
+results.position_error = zeros(2,Npts);
+results.velocity_error = zeros(2,Npts);
     
 % innovations
 results.innovationRange = zeros(1,Npts);

@@ -6,16 +6,16 @@
  */
 
 /* Include files */
-#include "ZEN_objectTracking_V0_systemNoiseCov.h"
-#include "ZEN_objectTracking_V0_engine.h"
 #include "mwmathutil.h"
 #include "rt_nonfinite.h"
+#include "ZEN_objectTracking_V0_engine.h"
+#include "ZEN_objectTracking_V0_systemNoiseCov.h"
 
 /* Function Definitions */
 void c_ZEN_objectTracking_V0_systemN(real_T q, real_T Ts, real_T Q[16])
 {
-  int32_T i;
-  static const int8_T iv[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+  int32_T i0;
+  static const int8_T iv0[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
   };
 
   real_T Q_tmp;
@@ -41,8 +41,8 @@ void c_ZEN_objectTracking_V0_systemN(real_T q, real_T Ts, real_T Q[16])
   /*               */
   /*  */
   /*  ************************************************************* */
-  for (i = 0; i < 16; i++) {
-    Q[i] = iv[i];
+  for (i0 = 0; i0 < 16; i0++) {
+    Q[i0] = iv0[i0];
   }
 
   Q_tmp = muDoubleScalarPower(Ts, 3.0) / 3.0;
@@ -55,8 +55,8 @@ void c_ZEN_objectTracking_V0_systemN(real_T q, real_T Ts, real_T Q[16])
   Q[10] = Ts;
   Q[7] = b_Q_tmp;
   Q[15] = Ts;
-  for (i = 0; i < 16; i++) {
-    Q[i] *= q;
+  for (i0 = 0; i0 < 16; i0++) {
+    Q[i0] *= q;
   }
 }
 

@@ -1,0 +1,27 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		ZEN_simulateSignals;
+		emlrtGetRootTLSGlobal;
+		emlrtLockerFunction;
+		emxEnsureCapacity_int32_T;
+		emxEnsureCapacity_int8_T;
+		emxEnsureCapacity_real_T;
+		emxFreeStruct_struct0_T;
+		emxFreeStruct_struct4_T;
+		emxFree_int32_T;
+		emxFree_int8_T;
+		emxFree_real_T;
+		emxInitStruct_struct0_T;
+		emxInitStruct_struct4_T;
+		emxInit_int32_T;
+		emxInit_int8_T;
+		emxInit_real_T;
+		ZEN_simulateSignals_initialize;
+		ZEN_simulateSignals_terminate;
+		ZEN_simulateSignals_atexit;
+	local:
+		*;
+};

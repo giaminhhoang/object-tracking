@@ -91,6 +91,9 @@ for i = 1:Npts
     resultsAlgo.innovationRange_std(:,i) = dataAlgo.ekf.innovationRange_std;
     resultsAlgo.innovationAzimuth_std(:,i) = dataAlgo.ekf.innovationAzimuth_std;
     
+    % position and velocity errors
+    resultsAlgo.position_error(:,i) = dataAlgo.outputs.position - signals.position(:,i);
+    resultsAlgo.velocity_error(:,i) = dataAlgo.outputs.velocity - signals.velocity(:,i);
 end
 
 end

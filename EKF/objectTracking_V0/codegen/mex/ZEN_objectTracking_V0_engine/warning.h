@@ -5,21 +5,25 @@
  *
  */
 
-#pragma once
+#ifndef WARNING_H
+#define WARNING_H
 
 /* Include files */
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "tmwtypes.h"
 #include "mex.h"
 #include "emlrt.h"
 #include "rtwtypes.h"
 #include "ZEN_objectTracking_V0_engine_types.h"
 
 /* Function Declarations */
-void b_warning(const emlrtStack *sp, int32_T varargin_1, const char_T
-               varargin_2[14]);
-void warning(const emlrtStack *sp);
+extern void b_warning(const emlrtStack *sp, int32_T varargin_1, const char_T
+                      varargin_2[14]);
+extern void warning(const emlrtStack *sp);
+
+#endif
 
 /* End of code generation (warning.h) */

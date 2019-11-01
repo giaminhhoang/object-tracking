@@ -22,7 +22,19 @@
 %
 % *************************************************************************
 
-function [stat, signals, results] = ZEN_runSimulation()
+function [stat, signals, results] = ZEN_runSimulation(varargin)
+
+switch nargin
+    
+    case 0
+        overwriteParamsList = [];
+        displayText = 1;
+        displayFig = 1;
+    case 1
+        overwriteParamsList = varargin{1};
+        displayText = 0;
+        displayFig = 0;
+end
 
 %% *************************************************************
 % parameters
@@ -78,6 +90,8 @@ algoConfigNum = ZEN_getAlgoConfigNum(algoConfigName);
 % *****************************************
 
 [paramsSim] = ZEN_getSimulationParameters(Npts, Ts);
+paramsSim.displayText = displayText;
+paramsSim.displayFig = displayFig;
 paramsSim.Ts = Ts;
 paramsSim.Npts = Npts;
 paramsSim.useMex = useMex;
@@ -85,7 +99,7 @@ paramsSim.useMex = useMex;
 if useLoadedTrajectory
 
     % [valuesRef] = ZEN_readReference();
-    load('object_trajectory.mat')  % hardcode the data
+    load object_trajectory.mat x_traj_pos  % hardcode data loading
     valuesRef = x_traj_pos;
     Npts = length(valuesRef);
 
@@ -141,8 +155,8 @@ if paramsSim.displayText
     disp('Processing...')
 end
 t0 = cputime;
-overwriteParamsList = [];
-[results, dataAlgo, paramsAlgo] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList);
+% overwriteParamsList = [];
+[results, ~, ~] = ZEN_algoEngine(paramsSim, signals, algoName, algoConfigNum, overwriteParamsList);
 
 t1 = cputime;
 if paramsSim.displayText
@@ -155,7 +169,7 @@ end
 %
 % *************************************************************************
 
-% [stat] = ZEN_computeStat(results,signals,paramsSim);
+[stat] = ZEN_computeStat(results,signals);
 
 
 %% **************************************
@@ -164,13 +178,18 @@ end
 %
 % ***************************************
 if paramsSim.displayFig
-    display = ZEN_displayDynamicSignals(signals, results, display);
-    display = ZEN_displaySensorSignals(signals, display);
-    display = ZEN_displayAlgorithmSignals(results, display);
+    ZEN_displayDynamicSignals(signals, results, display);
+    ZEN_displaySensorSignals(signals, display);
+    ZEN_displayAlgorithmSignals(results, display);
 end
 
 disp('**********************************')
 disp('Statistics')
+disp(['Position x rms/max =', num2str(stat.position_x.rms,'%3.2f'),'/',num2str(stat.position_x.max,'%3.2f'),' m'])
+disp(['Position y rms/max =', num2str(stat.position_y.rms,'%3.2f'),'/',num2str(stat.position_y.max,'%3.2f'),' m'])
+disp(['Velocity x rms/max =', num2str(stat.velocity_x.rms,'%3.2f'),'/',num2str(stat.velocity_x.max,'%3.2f'),' m/s'])
+disp(['Velocity y rms/max =', num2str(stat.velocity_y.rms,'%3.2f'),'/',num2str(stat.velocity_y.max,'%3.2f'),' m/s'])
+
 
 end
 

@@ -6,11 +6,11 @@
  */
 
 /* Include files */
-#include "_coder_ZEN_objectTracking_V0_engine_api.h"
-#include "ZEN_objectTracking_V0_engine.h"
-#include "ZEN_objectTracking_V0_engine_data.h"
-#include "rt_nonfinite.h"
 #include <string.h>
+#include "rt_nonfinite.h"
+#include "ZEN_objectTracking_V0_engine.h"
+#include "_coder_ZEN_objectTracking_V0_engine_api.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 
 /* Function Declarations */
 static real_T ab_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
@@ -90,22 +90,22 @@ static real_T ab_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
 static const mxArray *b_emlrt_marshallOut(const real_T u[500])
 {
   const mxArray *y;
-  const mxArray *m;
-  static const int32_T iv[2] = { 1, 500 };
+  const mxArray *m10;
+  static const int32_T iv9[2] = { 1, 500 };
 
   real_T *pData;
+  int32_T i2;
   int32_T i;
-  int32_T b_i;
   y = NULL;
-  m = emlrtCreateNumericArray(2, iv, mxDOUBLE_CLASS, mxREAL);
-  pData = emlrtMxGetPr(m);
-  i = 0;
-  for (b_i = 0; b_i < 500; b_i++) {
-    pData[i] = u[b_i];
-    i++;
+  m10 = emlrtCreateNumericArray(2, iv9, mxDOUBLE_CLASS, mxREAL);
+  pData = emlrtMxGetPr(m10);
+  i2 = 0;
+  for (i = 0; i < 500; i++) {
+    pData[i2] = u[i];
+    i2++;
   }
 
-  emlrtAssign(&y, m);
+  emlrtAssign(&y, m10);
   return y;
 }
 
@@ -134,22 +134,22 @@ static void c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *signals,
 static const mxArray *c_emlrt_marshallOut(const int8_T u[500])
 {
   const mxArray *y;
-  const mxArray *m;
-  static const int32_T iv[2] = { 1, 500 };
+  const mxArray *m11;
+  static const int32_T iv10[2] = { 1, 500 };
 
   int8_T *pData;
+  int32_T i3;
   int32_T i;
-  int32_T b_i;
   y = NULL;
-  m = emlrtCreateNumericArray(2, iv, mxINT8_CLASS, mxREAL);
-  pData = (int8_T *)emlrtMxGetData(m);
-  i = 0;
-  for (b_i = 0; b_i < 500; b_i++) {
-    pData[i] = u[b_i];
-    i++;
+  m11 = emlrtCreateNumericArray(2, iv10, mxINT8_CLASS, mxREAL);
+  pData = (int8_T *)emlrtMxGetData(m11);
+  i3 = 0;
+  for (i = 0; i < 500; i++) {
+    pData[i3] = u[i];
+    i3++;
   }
 
-  emlrtAssign(&y, m);
+  emlrtAssign(&y, m11);
   return y;
 }
 
@@ -158,13 +158,13 @@ static void cb_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[1] = { 4 };
 
-  real_T (*r)[4];
+  real_T (*r3)[4];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 1U, dims);
-  r = (real_T (*)[4])emlrtMxGetData(src);
-  ret[0] = (*r)[0];
-  ret[1] = (*r)[1];
-  ret[2] = (*r)[2];
-  ret[3] = (*r)[3];
+  r3 = (real_T (*)[4])emlrtMxGetData(src);
+  ret[0] = (*r3)[0];
+  ret[1] = (*r3)[1];
+  ret[2] = (*r3)[2];
+  ret[3] = (*r3)[3];
   emlrtDestroyArray(&src);
 }
 
@@ -196,26 +196,26 @@ static void d_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
 static const mxArray *d_emlrt_marshallOut(const real_T u[1000])
 {
   const mxArray *y;
-  const mxArray *m;
-  static const int32_T iv[2] = { 2, 500 };
+  const mxArray *m12;
+  static const int32_T iv11[2] = { 2, 500 };
 
   real_T *pData;
+  int32_T i4;
   int32_T i;
-  int32_T b_i;
-  int32_T i1;
+  int32_T i5;
   y = NULL;
-  m = emlrtCreateNumericArray(2, iv, mxDOUBLE_CLASS, mxREAL);
-  pData = emlrtMxGetPr(m);
-  i = 0;
-  for (b_i = 0; b_i < 500; b_i++) {
-    i1 = b_i << 1;
-    pData[i] = u[i1];
-    i++;
-    pData[i] = u[i1 + 1];
-    i++;
+  m12 = emlrtCreateNumericArray(2, iv11, mxDOUBLE_CLASS, mxREAL);
+  pData = emlrtMxGetPr(m12);
+  i4 = 0;
+  for (i = 0; i < 500; i++) {
+    i5 = i << 1;
+    pData[i4] = u[i5];
+    i4++;
+    pData[i4] = u[1 + i5];
+    i4++;
   }
 
-  emlrtAssign(&y, m);
+  emlrtAssign(&y, m12);
   return y;
 }
 
@@ -224,10 +224,10 @@ static void db_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[2] = { 4, 4 };
 
-  real_T (*r)[16];
+  real_T (*r4)[16];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 2U, dims);
-  r = (real_T (*)[16])emlrtMxGetData(src);
-  memcpy(&ret[0], &(*r)[0], 16U * sizeof(real_T));
+  r4 = (real_T (*)[16])emlrtMxGetData(src);
+  memcpy(&ret[0], &(*r4)[0], sizeof(real_T) << 4);
   emlrtDestroyArray(&src);
 }
 
@@ -241,207 +241,207 @@ static void e_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
 static const mxArray *e_emlrt_marshallOut(const struct2_T *u)
 {
   const mxArray *y;
-  static const char * sv[7] = { "t", "t0", "status", "usedInSolution", "sonar",
+  static const char * sv1[7] = { "t", "t0", "status", "usedInSolution", "sonar",
     "ekf", "outputs" };
 
   const mxArray *b_y;
-  const mxArray *m;
-  const mxArray *m1;
-  const mxArray *m2;
-  const mxArray *m3;
-  static const char * sv1[3] = { "newMeasurement", "range", "azimuth" };
-
-  const mxArray *c_y;
-  const mxArray *m4;
-  const mxArray *m5;
-  const mxArray *m6;
-  static const char * sv2[12] = { "Ts", "tLastCalled", "tLastUpdated", "Xk",
-    "Pk", "Rk", "innovationRange", "innovationAzimuth", "innovationRange_norm",
-    "innovationAzimuth_norm", "innovationRange_std", "innovationAzimuth_std" };
-
-  const mxArray *m7;
-  const mxArray *m8;
-  const mxArray *m9;
-  const mxArray *m10;
-  static const int32_T iv[1] = { 4 };
-
-  real_T *pData;
-  const mxArray *m11;
-  static const int32_T iv1[2] = { 4, 4 };
-
-  real_T *b_pData;
-  int32_T i;
-  int32_T b_i;
-  int32_T i1;
-  const mxArray *m12;
-  static const int32_T iv2[2] = { 2, 2 };
-
-  real_T *c_pData;
   const mxArray *m13;
   const mxArray *m14;
   const mxArray *m15;
   const mxArray *m16;
+  static const char * sv2[3] = { "newMeasurement", "range", "azimuth" };
+
+  const mxArray *c_y;
   const mxArray *m17;
   const mxArray *m18;
-  static const char * sv3[4] = { "position", "velocity", "position_std",
+  const mxArray *m19;
+  static const char * sv3[12] = { "Ts", "tLastCalled", "tLastUpdated", "Xk",
+    "Pk", "Rk", "innovationRange", "innovationAzimuth", "innovationRange_norm",
+    "innovationAzimuth_norm", "innovationRange_std", "innovationAzimuth_std" };
+
+  const mxArray *m20;
+  const mxArray *m21;
+  const mxArray *m22;
+  const mxArray *m23;
+  static const int32_T iv12[1] = { 4 };
+
+  real_T *pData;
+  const mxArray *m24;
+  static const int32_T iv13[2] = { 4, 4 };
+
+  real_T *b_pData;
+  int32_T i6;
+  int32_T i;
+  int32_T i7;
+  const mxArray *m25;
+  static const int32_T iv14[2] = { 2, 2 };
+
+  real_T *c_pData;
+  const mxArray *m26;
+  const mxArray *m27;
+  const mxArray *m28;
+  const mxArray *m29;
+  const mxArray *m30;
+  const mxArray *m31;
+  static const char * sv4[4] = { "position", "velocity", "position_std",
     "velocity_std" };
 
-  const mxArray *m19;
-  static const int32_T iv3[1] = { 2 };
+  const mxArray *m32;
+  static const int32_T iv15[1] = { 2 };
 
   real_T *d_pData;
-  const mxArray *m20;
-  static const int32_T iv4[1] = { 2 };
+  const mxArray *m33;
+  static const int32_T iv16[1] = { 2 };
 
   real_T *e_pData;
-  const mxArray *m21;
-  static const int32_T iv5[1] = { 2 };
+  const mxArray *m34;
+  static const int32_T iv17[1] = { 2 };
 
   real_T *f_pData;
-  const mxArray *m22;
-  static const int32_T iv6[1] = { 2 };
+  const mxArray *m35;
+  static const int32_T iv18[1] = { 2 };
 
   real_T *g_pData;
   y = NULL;
-  emlrtAssign(&y, emlrtCreateStructMatrix(1, 1, 7, sv));
+  emlrtAssign(&y, emlrtCreateStructMatrix(1, 1, 7, sv1));
   b_y = NULL;
-  m = emlrtCreateDoubleScalar(u->t);
-  emlrtAssign(&b_y, m);
+  m13 = emlrtCreateDoubleScalar(u->t);
+  emlrtAssign(&b_y, m13);
   emlrtSetFieldR2017b(y, 0, "t", b_y, 0);
   b_y = NULL;
-  m1 = emlrtCreateDoubleScalar(u->t0);
-  emlrtAssign(&b_y, m1);
+  m14 = emlrtCreateDoubleScalar(u->t0);
+  emlrtAssign(&b_y, m14);
   emlrtSetFieldR2017b(y, 0, "t0", b_y, 1);
   b_y = NULL;
-  m2 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
-  *(int8_T *)emlrtMxGetData(m2) = u->status;
-  emlrtAssign(&b_y, m2);
+  m15 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
+  *(int8_T *)emlrtMxGetData(m15) = u->status;
+  emlrtAssign(&b_y, m15);
   emlrtSetFieldR2017b(y, 0, "status", b_y, 2);
   b_y = NULL;
-  m3 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
-  *(int8_T *)emlrtMxGetData(m3) = u->usedInSolution;
-  emlrtAssign(&b_y, m3);
+  m16 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
+  *(int8_T *)emlrtMxGetData(m16) = u->usedInSolution;
+  emlrtAssign(&b_y, m16);
   emlrtSetFieldR2017b(y, 0, "usedInSolution", b_y, 3);
   b_y = NULL;
-  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 3, sv1));
+  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 3, sv2));
   c_y = NULL;
-  m4 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
-  *(int8_T *)emlrtMxGetData(m4) = u->sonar.newMeasurement;
-  emlrtAssign(&c_y, m4);
+  m17 = emlrtCreateNumericMatrix(1, 1, mxINT8_CLASS, mxREAL);
+  *(int8_T *)emlrtMxGetData(m17) = u->sonar.newMeasurement;
+  emlrtAssign(&c_y, m17);
   emlrtSetFieldR2017b(b_y, 0, "newMeasurement", c_y, 0);
   c_y = NULL;
-  m5 = emlrtCreateDoubleScalar(u->sonar.range);
-  emlrtAssign(&c_y, m5);
+  m18 = emlrtCreateDoubleScalar(u->sonar.range);
+  emlrtAssign(&c_y, m18);
   emlrtSetFieldR2017b(b_y, 0, "range", c_y, 1);
   c_y = NULL;
-  m6 = emlrtCreateDoubleScalar(u->sonar.azimuth);
-  emlrtAssign(&c_y, m6);
+  m19 = emlrtCreateDoubleScalar(u->sonar.azimuth);
+  emlrtAssign(&c_y, m19);
   emlrtSetFieldR2017b(b_y, 0, "azimuth", c_y, 2);
   emlrtSetFieldR2017b(y, 0, "sonar", b_y, 4);
   b_y = NULL;
-  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 12, sv2));
+  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 12, sv3));
   c_y = NULL;
-  m7 = emlrtCreateDoubleScalar(u->ekf.Ts);
-  emlrtAssign(&c_y, m7);
+  m20 = emlrtCreateDoubleScalar(u->ekf.Ts);
+  emlrtAssign(&c_y, m20);
   emlrtSetFieldR2017b(b_y, 0, "Ts", c_y, 0);
   c_y = NULL;
-  m8 = emlrtCreateDoubleScalar(u->ekf.tLastCalled);
-  emlrtAssign(&c_y, m8);
+  m21 = emlrtCreateDoubleScalar(u->ekf.tLastCalled);
+  emlrtAssign(&c_y, m21);
   emlrtSetFieldR2017b(b_y, 0, "tLastCalled", c_y, 1);
   c_y = NULL;
-  m9 = emlrtCreateDoubleScalar(u->ekf.tLastUpdated);
-  emlrtAssign(&c_y, m9);
+  m22 = emlrtCreateDoubleScalar(u->ekf.tLastUpdated);
+  emlrtAssign(&c_y, m22);
   emlrtSetFieldR2017b(b_y, 0, "tLastUpdated", c_y, 2);
   c_y = NULL;
-  m10 = emlrtCreateNumericArray(1, iv, mxDOUBLE_CLASS, mxREAL);
-  pData = emlrtMxGetPr(m10);
+  m23 = emlrtCreateNumericArray(1, iv12, mxDOUBLE_CLASS, mxREAL);
+  pData = emlrtMxGetPr(m23);
   pData[0] = u->ekf.Xk[0];
   pData[1] = u->ekf.Xk[1];
   pData[2] = u->ekf.Xk[2];
   pData[3] = u->ekf.Xk[3];
-  emlrtAssign(&c_y, m10);
+  emlrtAssign(&c_y, m23);
   emlrtSetFieldR2017b(b_y, 0, "Xk", c_y, 3);
   c_y = NULL;
-  m11 = emlrtCreateNumericArray(2, iv1, mxDOUBLE_CLASS, mxREAL);
-  b_pData = emlrtMxGetPr(m11);
-  i = 0;
-  for (b_i = 0; b_i < 4; b_i++) {
-    i1 = b_i << 2;
-    b_pData[i] = u->ekf.Pk[i1];
-    i++;
-    b_pData[i] = u->ekf.Pk[i1 + 1];
-    i++;
-    b_pData[i] = u->ekf.Pk[i1 + 2];
-    i++;
-    b_pData[i] = u->ekf.Pk[i1 + 3];
-    i++;
+  m24 = emlrtCreateNumericArray(2, iv13, mxDOUBLE_CLASS, mxREAL);
+  b_pData = emlrtMxGetPr(m24);
+  i6 = 0;
+  for (i = 0; i < 4; i++) {
+    i7 = i << 2;
+    b_pData[i6] = u->ekf.Pk[i7];
+    i6++;
+    b_pData[i6] = u->ekf.Pk[1 + i7];
+    i6++;
+    b_pData[i6] = u->ekf.Pk[2 + i7];
+    i6++;
+    b_pData[i6] = u->ekf.Pk[3 + i7];
+    i6++;
   }
 
-  emlrtAssign(&c_y, m11);
+  emlrtAssign(&c_y, m24);
   emlrtSetFieldR2017b(b_y, 0, "Pk", c_y, 4);
   c_y = NULL;
-  m12 = emlrtCreateNumericArray(2, iv2, mxDOUBLE_CLASS, mxREAL);
-  c_pData = emlrtMxGetPr(m12);
+  m25 = emlrtCreateNumericArray(2, iv14, mxDOUBLE_CLASS, mxREAL);
+  c_pData = emlrtMxGetPr(m25);
   c_pData[0] = u->ekf.Rk[0];
   c_pData[1] = u->ekf.Rk[1];
   c_pData[2] = u->ekf.Rk[2];
   c_pData[3] = u->ekf.Rk[3];
-  emlrtAssign(&c_y, m12);
+  emlrtAssign(&c_y, m25);
   emlrtSetFieldR2017b(b_y, 0, "Rk", c_y, 5);
   c_y = NULL;
-  m13 = emlrtCreateDoubleScalar(u->ekf.innovationRange);
-  emlrtAssign(&c_y, m13);
+  m26 = emlrtCreateDoubleScalar(u->ekf.innovationRange);
+  emlrtAssign(&c_y, m26);
   emlrtSetFieldR2017b(b_y, 0, "innovationRange", c_y, 6);
   c_y = NULL;
-  m14 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth);
-  emlrtAssign(&c_y, m14);
+  m27 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth);
+  emlrtAssign(&c_y, m27);
   emlrtSetFieldR2017b(b_y, 0, "innovationAzimuth", c_y, 7);
   c_y = NULL;
-  m15 = emlrtCreateDoubleScalar(u->ekf.innovationRange_norm);
-  emlrtAssign(&c_y, m15);
+  m28 = emlrtCreateDoubleScalar(u->ekf.innovationRange_norm);
+  emlrtAssign(&c_y, m28);
   emlrtSetFieldR2017b(b_y, 0, "innovationRange_norm", c_y, 8);
   c_y = NULL;
-  m16 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth_norm);
-  emlrtAssign(&c_y, m16);
+  m29 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth_norm);
+  emlrtAssign(&c_y, m29);
   emlrtSetFieldR2017b(b_y, 0, "innovationAzimuth_norm", c_y, 9);
   c_y = NULL;
-  m17 = emlrtCreateDoubleScalar(u->ekf.innovationRange_std);
-  emlrtAssign(&c_y, m17);
+  m30 = emlrtCreateDoubleScalar(u->ekf.innovationRange_std);
+  emlrtAssign(&c_y, m30);
   emlrtSetFieldR2017b(b_y, 0, "innovationRange_std", c_y, 10);
   c_y = NULL;
-  m18 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth_std);
-  emlrtAssign(&c_y, m18);
+  m31 = emlrtCreateDoubleScalar(u->ekf.innovationAzimuth_std);
+  emlrtAssign(&c_y, m31);
   emlrtSetFieldR2017b(b_y, 0, "innovationAzimuth_std", c_y, 11);
   emlrtSetFieldR2017b(y, 0, "ekf", b_y, 5);
   b_y = NULL;
-  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 4, sv3));
+  emlrtAssign(&b_y, emlrtCreateStructMatrix(1, 1, 4, sv4));
   c_y = NULL;
-  m19 = emlrtCreateNumericArray(1, iv3, mxDOUBLE_CLASS, mxREAL);
-  d_pData = emlrtMxGetPr(m19);
+  m32 = emlrtCreateNumericArray(1, iv15, mxDOUBLE_CLASS, mxREAL);
+  d_pData = emlrtMxGetPr(m32);
   d_pData[0] = u->outputs.position[0];
   d_pData[1] = u->outputs.position[1];
-  emlrtAssign(&c_y, m19);
+  emlrtAssign(&c_y, m32);
   emlrtSetFieldR2017b(b_y, 0, "position", c_y, 0);
   c_y = NULL;
-  m20 = emlrtCreateNumericArray(1, iv4, mxDOUBLE_CLASS, mxREAL);
-  e_pData = emlrtMxGetPr(m20);
+  m33 = emlrtCreateNumericArray(1, iv16, mxDOUBLE_CLASS, mxREAL);
+  e_pData = emlrtMxGetPr(m33);
   e_pData[0] = u->outputs.velocity[0];
   e_pData[1] = u->outputs.velocity[1];
-  emlrtAssign(&c_y, m20);
+  emlrtAssign(&c_y, m33);
   emlrtSetFieldR2017b(b_y, 0, "velocity", c_y, 1);
   c_y = NULL;
-  m21 = emlrtCreateNumericArray(1, iv5, mxDOUBLE_CLASS, mxREAL);
-  f_pData = emlrtMxGetPr(m21);
+  m34 = emlrtCreateNumericArray(1, iv17, mxDOUBLE_CLASS, mxREAL);
+  f_pData = emlrtMxGetPr(m34);
   f_pData[0] = u->outputs.position_std[0];
   f_pData[1] = u->outputs.position_std[1];
-  emlrtAssign(&c_y, m21);
+  emlrtAssign(&c_y, m34);
   emlrtSetFieldR2017b(b_y, 0, "position_std", c_y, 2);
   c_y = NULL;
-  m22 = emlrtCreateNumericArray(1, iv6, mxDOUBLE_CLASS, mxREAL);
-  g_pData = emlrtMxGetPr(m22);
+  m35 = emlrtCreateNumericArray(1, iv18, mxDOUBLE_CLASS, mxREAL);
+  g_pData = emlrtMxGetPr(m35);
   g_pData[0] = u->outputs.velocity_std[0];
   g_pData[1] = u->outputs.velocity_std[1];
-  emlrtAssign(&c_y, m22);
+  emlrtAssign(&c_y, m35);
   emlrtSetFieldR2017b(b_y, 0, "velocity_std", c_y, 3);
   emlrtSetFieldR2017b(y, 0, "outputs", b_y, 6);
   return y;
@@ -452,26 +452,27 @@ static void eb_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[2] = { 2, 2 };
 
-  real_T (*r)[4];
+  real_T (*r5)[4];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 2U, dims);
-  r = (real_T (*)[4])emlrtMxGetData(src);
-  ret[0] = (*r)[0];
-  ret[1] = (*r)[1];
-  ret[2] = (*r)[2];
-  ret[3] = (*r)[3];
+  r5 = (real_T (*)[4])emlrtMxGetData(src);
+  ret[0] = (*r5)[0];
+  ret[1] = (*r5)[1];
+  ret[2] = (*r5)[2];
+  ret[3] = (*r5)[3];
   emlrtDestroyArray(&src);
 }
 
 static const mxArray *emlrt_marshallOut(const struct7_T *u)
 {
   const mxArray *y;
-  static const char * sv[13] = { "t", "status", "usedInSolution", "position",
-    "velocity", "position_std", "velocity_std", "innovationRange",
-    "innovationAzimuth", "innovationRange_norm", "innovationAzimuth_norm",
-    "innovationRange_std", "innovationAzimuth_std" };
+  static const char * sv0[15] = { "t", "status", "usedInSolution", "position",
+    "velocity", "position_std", "velocity_std", "position_error",
+    "velocity_error", "innovationRange", "innovationAzimuth",
+    "innovationRange_norm", "innovationAzimuth_norm", "innovationRange_std",
+    "innovationAzimuth_std" };
 
   y = NULL;
-  emlrtAssign(&y, emlrtCreateStructMatrix(1, 1, 13, sv));
+  emlrtAssign(&y, emlrtCreateStructMatrix(1, 1, 15, sv0));
   emlrtSetFieldR2017b(y, 0, "t", b_emlrt_marshallOut(u->t), 0);
   emlrtSetFieldR2017b(y, 0, "status", c_emlrt_marshallOut(u->status), 1);
   emlrtSetFieldR2017b(y, 0, "usedInSolution", c_emlrt_marshallOut
@@ -482,18 +483,22 @@ static const mxArray *emlrt_marshallOut(const struct7_T *u)
                       5);
   emlrtSetFieldR2017b(y, 0, "velocity_std", d_emlrt_marshallOut(u->velocity_std),
                       6);
+  emlrtSetFieldR2017b(y, 0, "position_error", d_emlrt_marshallOut
+                      (u->position_error), 7);
+  emlrtSetFieldR2017b(y, 0, "velocity_error", d_emlrt_marshallOut
+                      (u->velocity_error), 8);
   emlrtSetFieldR2017b(y, 0, "innovationRange", b_emlrt_marshallOut
-                      (u->innovationRange), 7);
+                      (u->innovationRange), 9);
   emlrtSetFieldR2017b(y, 0, "innovationAzimuth", b_emlrt_marshallOut
-                      (u->innovationAzimuth), 8);
+                      (u->innovationAzimuth), 10);
   emlrtSetFieldR2017b(y, 0, "innovationRange_norm", b_emlrt_marshallOut
-                      (u->innovationRange_norm), 9);
+                      (u->innovationRange_norm), 11);
   emlrtSetFieldR2017b(y, 0, "innovationAzimuth_norm", b_emlrt_marshallOut
-                      (u->innovationAzimuth_norm), 10);
+                      (u->innovationAzimuth_norm), 12);
   emlrtSetFieldR2017b(y, 0, "innovationRange_std", b_emlrt_marshallOut
-                      (u->innovationRange_std), 11);
+                      (u->innovationRange_std), 13);
   emlrtSetFieldR2017b(y, 0, "innovationAzimuth_std", b_emlrt_marshallOut
-                      (u->innovationAzimuth_std), 12);
+                      (u->innovationAzimuth_std), 14);
   return y;
 }
 
@@ -509,11 +514,11 @@ static void fb_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[1] = { 2 };
 
-  real_T (*r)[2];
+  real_T (*r6)[2];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 1U, dims);
-  r = (real_T (*)[2])emlrtMxGetData(src);
-  ret[0] = (*r)[0];
-  ret[1] = (*r)[1];
+  r6 = (real_T (*)[2])emlrtMxGetData(src);
+  ret[0] = (*r6)[0];
+  ret[1] = (*r6)[1];
   emlrtDestroyArray(&src);
 }
 
@@ -836,10 +841,10 @@ static void w_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[2] = { 1, 500 };
 
-  real_T (*r)[500];
+  real_T (*r0)[500];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 2U, dims);
-  r = (real_T (*)[500])emlrtMxGetData(src);
-  memcpy(&ret[0], &(*r)[0], 500U * sizeof(real_T));
+  r0 = (real_T (*)[500])emlrtMxGetData(src);
+  memcpy(&ret[0], &(*r0)[0], 500U * sizeof(real_T));
   emlrtDestroyArray(&src);
 }
 
@@ -848,10 +853,10 @@ static void x_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[2] = { 2, 500 };
 
-  real_T (*r)[1000];
+  real_T (*r1)[1000];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 2U, dims);
-  r = (real_T (*)[1000])emlrtMxGetData(src);
-  memcpy(&ret[0], &(*r)[0], 1000U * sizeof(real_T));
+  r1 = (real_T (*)[1000])emlrtMxGetData(src);
+  memcpy(&ret[0], &(*r1)[0], 1000U * sizeof(real_T));
   emlrtDestroyArray(&src);
 }
 
@@ -860,10 +865,10 @@ static void y_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
 {
   static const int32_T dims[2] = { 1, 500 };
 
-  int8_T (*r)[500];
+  int8_T (*r2)[500];
   emlrtCheckBuiltInR2012b(sp, msgId, src, "int8", false, 2U, dims);
-  r = (int8_T (*)[500])emlrtMxGetData(src);
-  memcpy(&ret[0], &(*r)[0], 500U * sizeof(int8_T));
+  r2 = (int8_T (*)[500])emlrtMxGetData(src);
+  memcpy(&ret[0], &(*r2)[0], 500U * sizeof(int8_T));
   emlrtDestroyArray(&src);
 }
 

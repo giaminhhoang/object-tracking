@@ -6,12 +6,12 @@
  */
 
 /* Include files */
-#include "ZEN_objectTracking_V0_measurementMatrix.h"
-#include "ZEN_objectTracking_V0_engine.h"
-#include "ZEN_objectTracking_V0_engine_data.h"
+#include <string.h>
 #include "mwmathutil.h"
 #include "rt_nonfinite.h"
-#include <string.h>
+#include "ZEN_objectTracking_V0_engine.h"
+#include "ZEN_objectTracking_V0_measurementMatrix.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 
 /* Variable Definitions */
 static emlrtRSInfo kb_emlrtRSI = { 25, /* lineNo */
@@ -48,7 +48,7 @@ void c_ZEN_objectTracking_V0_measure(const emlrtStack *sp, const real_T Xk[4],
   /*               */
   /*  */
   /*  ************************************************************* */
-  memset(&H[0], 0, 8U * sizeof(real_T));
+  memset(&H[0], 0, sizeof(real_T) << 3);
   st.site = &kb_emlrtRSI;
   range = Xk[0] * Xk[0] + Xk[1] * Xk[1];
   if (range < 0.0) {

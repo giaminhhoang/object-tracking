@@ -1,24 +1,27 @@
 /*
- * lusolve.h
+ * diag.h
  *
- * Code generation for function 'lusolve'
+ * Code generation for function 'diag'
  *
  */
 
-#pragma once
+#ifndef DIAG_H
+#define DIAG_H
 
 /* Include files */
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "tmwtypes.h"
 #include "mex.h"
 #include "emlrt.h"
 #include "rtwtypes.h"
 #include "ZEN_objectTracking_V0_engine_types.h"
 
 /* Function Declarations */
-void lusolve(const emlrtStack *sp, const real_T A_data[], const int32_T A_size[2],
-             real_T B_data[]);
+extern void diag(const real_T v[2], real_T d[4]);
 
-/* End of code generation (lusolve.h) */
+#endif
+
+/* End of code generation (diag.h) */

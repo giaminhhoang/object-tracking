@@ -5,13 +5,15 @@
  *
  */
 
-#pragma once
+#ifndef ZEN_OBJECTTRACKING_V0_ENGINE_DATA_H
+#define ZEN_OBJECTTRACKING_V0_ENGINE_DATA_H
 
 /* Include files */
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "tmwtypes.h"
 #include "mex.h"
 #include "emlrt.h"
 #include "rtwtypes.h"
@@ -34,16 +36,34 @@ extern emlrtRSInfo jb_emlrtRSI;
 extern emlrtRSInfo lb_emlrtRSI;
 extern emlrtRSInfo mb_emlrtRSI;
 extern emlrtRSInfo nb_emlrtRSI;
-extern emlrtRSInfo wb_emlrtRSI;
-extern emlrtRSInfo fc_emlrtRSI;
-extern emlrtRSInfo gc_emlrtRSI;
-extern emlrtRSInfo hc_emlrtRSI;
+extern emlrtRSInfo ob_emlrtRSI;
+extern emlrtRSInfo pb_emlrtRSI;
+extern emlrtRSInfo qb_emlrtRSI;
+extern emlrtRSInfo rb_emlrtRSI;
+extern emlrtRSInfo bc_emlrtRSI;
+extern emlrtRSInfo jc_emlrtRSI;
+extern emlrtRSInfo kc_emlrtRSI;
+extern emlrtRSInfo lc_emlrtRSI;
+extern emlrtRSInfo nc_emlrtRSI;
+extern emlrtRSInfo oc_emlrtRSI;
+extern emlrtRSInfo pc_emlrtRSI;
+extern emlrtRSInfo qc_emlrtRSI;
+extern emlrtRSInfo rc_emlrtRSI;
+extern emlrtRSInfo sc_emlrtRSI;
+extern emlrtRSInfo xc_emlrtRSI;
 extern emlrtRSInfo yc_emlrtRSI;
 extern emlrtRSInfo ad_emlrtRSI;
 extern emlrtRSInfo bd_emlrtRSI;
-extern emlrtRSInfo cd_emlrtRSI;
+extern emlrtRSInfo jd_emlrtRSI;
+extern emlrtRSInfo kd_emlrtRSI;
+extern emlrtRSInfo ld_emlrtRSI;
+extern emlrtRSInfo md_emlrtRSI;
+extern emlrtRSInfo pd_emlrtRSI;
+extern emlrtRSInfo qd_emlrtRSI;
 extern emlrtRTEInfo emlrtRTEI;
-extern emlrtRTEInfo b_emlrtRTEI;
 extern emlrtRTEInfo c_emlrtRTEI;
+extern emlrtRTEInfo d_emlrtRTEI;
+
+#endif
 
 /* End of code generation (ZEN_objectTracking_V0_engine_data.h) */

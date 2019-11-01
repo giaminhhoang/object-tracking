@@ -6,11 +6,11 @@
  */
 
 /* Include files */
-#include "ZEN_objectTracking_V0_engine.h"
-#include "ZEN_objectTracking_V0_engine_data.h"
-#include "ZEN_objectTracking_V0_process.h"
-#include "rt_nonfinite.h"
 #include <string.h>
+#include "rt_nonfinite.h"
+#include "ZEN_objectTracking_V0_engine.h"
+#include "ZEN_objectTracking_V0_process.h"
+#include "ZEN_objectTracking_V0_engine_data.h"
 
 /* Variable Definitions */
 static emlrtRSInfo emlrtRSI = { 63,    /* lineNo */
@@ -23,7 +23,7 @@ void ZEN_objectTracking_V0_engine(const emlrtStack *sp, const struct0_T *signals
   struct2_T *dataAlgo, struct6_T *paramsAlgo, struct7_T *resultsAlgo)
 {
   int32_T i;
-  int32_T b_i;
+  int32_T i8;
   emlrtStack st;
   st.prev = sp;
   st.tls = sp->tls;
@@ -66,7 +66,7 @@ void ZEN_objectTracking_V0_engine(const emlrtStack *sp, const struct0_T *signals
     /*                     Initial position and velocity */
     /*  */
     /*  ********************************************************************* */
-    if (i + 1 == 1) {
+    if (1 + i == 1) {
       /*  load initial position from reference  */
       /*  assume zero initial velocity */
       paramsAlgo->position0[0] = signals->position[0];
@@ -95,17 +95,6 @@ void ZEN_objectTracking_V0_engine(const emlrtStack *sp, const struct0_T *signals
     resultsAlgo->usedInSolution[i] = dataAlgo->usedInSolution;
 
     /*  main outputs */
-    b_i = i << 1;
-    resultsAlgo->position[b_i] = dataAlgo->outputs.position[0];
-    resultsAlgo->velocity[b_i] = dataAlgo->outputs.velocity[0];
-    resultsAlgo->position_std[b_i] = dataAlgo->outputs.position_std[0];
-    resultsAlgo->velocity_std[b_i] = dataAlgo->outputs.velocity_std[0];
-    b_i++;
-    resultsAlgo->position[b_i] = dataAlgo->outputs.position[1];
-    resultsAlgo->velocity[b_i] = dataAlgo->outputs.velocity[1];
-    resultsAlgo->position_std[b_i] = dataAlgo->outputs.position_std[1];
-    resultsAlgo->velocity_std[b_i] = dataAlgo->outputs.velocity_std[1];
-
     /*  innovations */
     resultsAlgo->innovationRange[i] = dataAlgo->ekf.innovationRange;
     resultsAlgo->innovationAzimuth[i] = dataAlgo->ekf.innovationAzimuth;
@@ -114,6 +103,26 @@ void ZEN_objectTracking_V0_engine(const emlrtStack *sp, const struct0_T *signals
       dataAlgo->ekf.innovationAzimuth_norm;
     resultsAlgo->innovationRange_std[i] = dataAlgo->ekf.innovationRange_std;
     resultsAlgo->innovationAzimuth_std[i] = dataAlgo->ekf.innovationAzimuth_std;
+
+    /*  position and velocity errors */
+    i8 = i << 1;
+    resultsAlgo->position[i8] = dataAlgo->outputs.position[0];
+    resultsAlgo->velocity[i8] = dataAlgo->outputs.velocity[0];
+    resultsAlgo->position_std[i8] = dataAlgo->outputs.position_std[0];
+    resultsAlgo->velocity_std[i8] = dataAlgo->outputs.velocity_std[0];
+    resultsAlgo->position_error[i8] = dataAlgo->outputs.position[0] -
+      signals->position[i8];
+    resultsAlgo->velocity_error[i8] = dataAlgo->outputs.velocity[0] -
+      signals->velocity[i8];
+    i8++;
+    resultsAlgo->position[i8] = dataAlgo->outputs.position[1];
+    resultsAlgo->velocity[i8] = dataAlgo->outputs.velocity[1];
+    resultsAlgo->position_std[i8] = dataAlgo->outputs.position_std[1];
+    resultsAlgo->velocity_std[i8] = dataAlgo->outputs.velocity_std[1];
+    resultsAlgo->position_error[i8] = dataAlgo->outputs.position[1] -
+      signals->position[i8];
+    resultsAlgo->velocity_error[i8] = dataAlgo->outputs.velocity[1] -
+      signals->velocity[i8];
     if (*emlrtBreakCheckR2012bFlagVar != 0) {
       emlrtBreakCheckR2012b(sp);
     }

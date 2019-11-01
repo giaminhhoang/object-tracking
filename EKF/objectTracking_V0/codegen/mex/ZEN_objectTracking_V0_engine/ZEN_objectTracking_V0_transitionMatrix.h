@@ -1,0 +1,27 @@
+/*
+ * ZEN_objectTracking_V0_transitionMatrix.h
+ *
+ * Code generation for function 'ZEN_objectTracking_V0_transitionMatrix'
+ *
+ */
+
+#ifndef ZEN_OBJECTTRACKING_V0_TRANSITIONMATRIX_H
+#define ZEN_OBJECTTRACKING_V0_TRANSITIONMATRIX_H
+
+/* Include files */
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "tmwtypes.h"
+#include "mex.h"
+#include "emlrt.h"
+#include "rtwtypes.h"
+#include "ZEN_objectTracking_V0_engine_types.h"
+
+/* Function Declarations */
+extern void c_ZEN_objectTracking_V0_transit(real_T Ts, real_T Phi[16]);
+
+#endif
+
+/* End of code generation (ZEN_objectTracking_V0_transitionMatrix.h) */

@@ -59,8 +59,8 @@ paramsAlgo.minimalUpdatePeriod = 0;
 % initial position velocity and their uncertainties
 paramsAlgo.position0 = zeros(2,1);
 paramsAlgo.velocity0 = zeros(2,1);
-paramsAlgo.position_std0 = 10;
-paramsAlgo.velocity_std0 = 10;
+paramsAlgo.position_std0 = 1;
+paramsAlgo.velocity_std0 = 1;
 
 % vehicle dynamics
 paramsAlgo.acceleration_psd = 1;     % acceleration PSD (m^2/s^3) 
